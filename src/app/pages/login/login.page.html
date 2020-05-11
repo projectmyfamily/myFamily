@@ -1,0 +1,38 @@
+
+<ion-content>
+
+  <div class="logo">
+    <img src="assets/LogoCompleta.svg">
+  </div>
+
+  <div class="ion-padding">
+
+    <section>
+    <span class="ion-text-center titulo">Login</span>
+    </section>
+  <div class="inputs">
+    <ion-item class="ion-margin-top" lines="none">
+        <ion-input type="text" placeholder="Login"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top" lines="none">
+      <ion-input type="password" placeholder="Senha"></ion-input>
+  </ion-item>
+  </div>
+  </div>
+ 
+    <div class="container ion-text-center">
+
+    <ion-button (click)="logar()" class="btnLogin">Entrar</ion-button>
+
+    <span class="ion-text-center ou">OU</span>
+
+    <span class="ion-text-center cadastrar">Sua família ainda não é cadastrada? <a (click)="cadastrar()">Cadastre-se</a></span>
+
+      <span class="slogan">Família por todos, todos por um.</span>
+
+
+    </div>
+
+  
+
+</ion-content>

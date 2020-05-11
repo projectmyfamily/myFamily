@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/logo2.svg">
+    <ion-buttons (click)="voltar()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container ion-text-center titulo">
+    <span>
+        Criar conta MyFamily
+    </span>
+  </div>
+
+  <div class="container ion-text-center necessidade">
+    <span>
+        É necessário criar um perfil para acessar o app.
+    </span>
+  </div>
+  
+<div class="forms">
+  <ion-item>
+    <ion-input type="text" placeholder="Nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="Idade"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" placeholder="Parentesco"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox color="warning" slot="start"></ion-checkbox>
+    <ion-label>Responsável</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" placeholder="PIN"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" placeholder="Confirme o PIN"></ion-input>
+  </ion-item>
+  
+</div>
+
+
+<ion-button (click)="finalizar()" class="ion-text-center btnSeguir">Cadastrar</ion-button>
+
+</ion-content>

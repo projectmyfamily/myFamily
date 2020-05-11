@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/logo2.svg">
+    <ion-buttons (click)="voltar()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container ion-text-center titulo">
+    <span>
+        Criar conta MyFamily
+    </span>
+  </div>
+<div class="forms">
+  <ion-item>
+    <ion-input type="text" placeholder="Nome da Família"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="E-mail"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" placeholder="Senha"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" placeholder="Confirme a senha"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="Cidade"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="Estado"></ion-input>
+  </ion-item>
+</div>
+
+<span (click)="modalTermos()" class="ion-text-center termos">Aceito os termos de privacidade</span>
+
+<ion-button (click)="seguir()" class="ion-text-center btnSeguir">Próximo</ion-button>
+
+</ion-content>
