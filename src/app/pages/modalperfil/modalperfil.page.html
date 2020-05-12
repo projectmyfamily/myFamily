@@ -1,9 +1,50 @@
-<ion-header>
+<<ion-header>
   <ion-toolbar>
-    <ion-title>modalperfil</ion-title>
+    <img class="logo" src="assets/LogoNome.png">
+    <ion-buttons (click)="voltar()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="ion-text-center container">
+
+    <span class="perfil">Perfil</span>
+
+    <ion-avatar class="ion-text-center addperfil">
+      <img src="assets/add.svg">
+    </ion-avatar>
+
+  
+    <div class="p1">
+     <span>Nome</span>
+    </div>
+    <div class="p2">
+      <span>Idade</span>
+     </div>
+     <div class="p3">
+      <span>Parentesco</span>
+     </div>
+     <div class="tarefasconcluidas">
+       <span (click)="historico()">Tarefas concluidas</span>
+     </div>
+
+     <div>
+      <ion-button (click)="creditos()" class="creditos">Créditos</ion-button>
+     </div>
+     <div>
+      <ion-button (click)="edit()" class="edit">Editar Perfil</ion-button>
+     </div>
+     <div>
+      <ion-button (click)="logout()" class="logout">Logout</ion-button>
+     </div>
+    
+  </div>
+
+
 
 </ion-content>

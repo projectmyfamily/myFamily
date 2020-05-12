@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tarefa</ion-title>
+    <img class="logo" src="assets/LogoNome.png">
+    
+    <ion-avatar (click)="abrirmodalperfil()" slot="end" class="perfil">
+      <img src="assets/add.svg">
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+      <img (click)="add()" src="assets/addtarefa.svg"> 
+  </ion-fab>
+
 
 </ion-content>
