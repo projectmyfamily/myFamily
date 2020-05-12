@@ -18,4 +18,9 @@ export class PerfilPage implements OnInit {
 
     this.navCtrl.navigateForward('/login');
   }
+
+  addperfil() {
+
+    this.navCtrl.navigateBack('/addperfil');
+  }
 }
