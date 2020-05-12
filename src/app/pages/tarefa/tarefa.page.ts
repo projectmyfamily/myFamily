@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController, NavController } from '@ionic/angular';
+import { ModalperfilPage } from '../modalperfil/modalperfil.page';
 
 @Component({
   selector: 'app-tarefa',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarefaPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  async abrirmodalperfil() {
+
+    const modalperfil = await this.modalCtrl.create({
+      component: ModalperfilPage
+    });
+
+    modalperfil.present();
+
+
+  }
+
+  add() {
+
+    this.navCtrl.navigateForward('/addtarefa');
   }
 
 }

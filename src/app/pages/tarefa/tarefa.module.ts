@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TarefaPageRoutingModule } from './tarefa-routing.module';
 
 import { TarefaPage } from './tarefa.page';
+import { ModalperfilPage } from '../modalperfil/modalperfil.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TarefaPage } from './tarefa.page';
     IonicModule,
     TarefaPageRoutingModule
   ],
-  declarations: [TarefaPage]
+  declarations: [TarefaPage, ModalperfilPage],
+  entryComponents: [ModalperfilPage]
 })
 export class TarefaPageModule {}

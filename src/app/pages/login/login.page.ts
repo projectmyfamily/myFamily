@@ -38,6 +38,7 @@ creds: CredenciaisDTO = {
 
   logar(){
     this.auth.login(this.creds).subscribe(response =>{ 
+      console.log(response)
       this.auth.successLogin(response.headers.get('Authorization'))
      this.navCtrl.navigateForward('/perfil');
 

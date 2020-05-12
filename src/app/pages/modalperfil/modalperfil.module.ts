@@ -15,6 +15,7 @@ import { ModalperfilPage } from './modalperfil.page';
     IonicModule,
     ModalperfilPageRoutingModule
   ],
-  declarations: [ModalperfilPage]
+  declarations: [ModalperfilPage],
+  exports: [ModalperfilPage]
 })
 export class ModalperfilPageModule {}
