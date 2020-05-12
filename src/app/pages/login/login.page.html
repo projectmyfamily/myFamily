@@ -12,10 +12,10 @@
     </section>
   <div class="inputs">
     <ion-item class="ion-margin-top" lines="none">
-        <ion-input type="text" placeholder="Login"></ion-input>
+        <ion-input name="creds.email" [(ngModel)]="creds.email" type="text" placeholder="Login"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-top" lines="none">
-      <ion-input type="password" placeholder="Senha"></ion-input>
+      <ion-input name="creds.senha" [(ngModel)]="creds.senha" type="password" placeholder="Senha"></ion-input>
   </ion-item>
   </div>
   </div>

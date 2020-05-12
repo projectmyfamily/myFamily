@@ -24,24 +24,25 @@
   </div>
   
 <div class="forms">
+  {{msg}}
   <ion-item>
-    <ion-input type="text" placeholder="Nome"></ion-input>
+    <ion-input name="membro.nome" [(ngModel)]="membro.nome" type="text" placeholder="Nome"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Idade"></ion-input>
+    <ion-input name="membro.nascimento" [(ngModel)]="membro.nascimento" type="date" placeholder="Idade"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="Parentesco"></ion-input>
+    <ion-input name="membro.parentesco" type="text" [(ngModel)]="membro.parentesco" placeholder="Parentesco"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-checkbox color="warning" slot="start"></ion-checkbox>
+    <ion-checkbox name="membro.responsabilidade" [(ngModel)]="membro.responsabilidade" color="warning" slot="start"></ion-checkbox>
     <ion-label>Responsável</ion-label>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="PIN"></ion-input>
+    <ion-input name="membro.pin" type="password"  [(ngModel)]="membro.pin" placeholder="PIN"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="Confirme o PIN"></ion-input>
+    <ion-input name="confirme" type="password" [(ngModel)]="confirme" placeholder="Confirme o PIN"></ion-input>
   </ion-item>
   
 </div>
