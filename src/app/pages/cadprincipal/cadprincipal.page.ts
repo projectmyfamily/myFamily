@@ -17,8 +17,7 @@ export class CadprincipalPage implements OnInit {
 nome: null, 
 email: null, 
 senha: null,  
-cidade: null, 
-estado: null
+
 
   }
 

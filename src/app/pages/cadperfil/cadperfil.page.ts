@@ -3,9 +3,12 @@ import { NavController } from '@ionic/angular';
 import { Membro } from 'src/model/membro';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Cadastro } from 'src/app/services/domain/cadastro-service';
+import { CadastroService } from 'src/app/services/domain/cadastro-service';
 import { AccountDTO } from 'src/model/accountDTO';
 import { StorageService } from 'src/app/services/storageService';
+import { Auth } from 'src/app/services/auth';
+import { CredenciaisDTO } from 'src/model/credenciaisDTO';
+import { Cadastro } from 'src/model/cadastro';
 
 @Component({
   selector: 'app-cadperfil',
@@ -30,7 +33,7 @@ export class CadperfilPage implements OnInit {
   msg = null
 
   //informações da conta em stand by para envio
-  data: any
+  main: any
 
 
   ac: any
@@ -40,14 +43,17 @@ export class CadperfilPage implements OnInit {
     public navCtrl: NavController,
     public active: ActivatedRoute, 
     public router: Router,
-    public cadastro: Cadastro,
-    public storage: StorageService
+    public cadastro: CadastroService,
+    public storage: StorageService,
+    public auth: Auth
     
     ) { 
       this.active.queryParams.subscribe( params => { 
       let getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {
-        this.data = getNav.extras.state
+        this.main = getNav.extras.state
+      
+        
       }
       });
     }
@@ -59,22 +65,24 @@ export class CadperfilPage implements OnInit {
 
   finalizar() {
       if(this.membro.pin == this.confirme) {
-        
         this.postAccount()
+       
+        
        
 
       }else{ 
         this.msg = "Os pins não são iguais, por favor digitar ambos corretamente"
       }
       
-    //this.navCtrl.navigateForward('/perfil');
+   
     
   }
 
     postMembro(id){ 
       this.cadastro.cadastrarMembro(this.membro, id).subscribe(
         response=>{ 
-
+          console.log("Membro cadastrado com sucesso!")
+          this.navCtrl.navigateForward('/perfil');
 
       }), erro =>{ 
         
@@ -83,11 +91,23 @@ export class CadperfilPage implements OnInit {
     }
 
     postAccount(){ 
-      this.cadastro.cadastrar(this.data).subscribe(
+      this.cadastro.cadastrar(this.main.data).subscribe(
         response =>{ 
-          
+          console.log("Cadastro conta ok")
+          let cad: CredenciaisDTO= { 
+            email: this.main.data.email,
+            senha: this.main.data.senha
+
+          }
+          this.auth.login(cad).subscribe(resp =>{ 
+            console.log("Login Success")
+            this.loadUser()
+            
+          })
+         
 
         }, erro =>{ 
+          console.log("Erro no cadastro conta ")
 
         }
       )
@@ -99,11 +119,12 @@ export class CadperfilPage implements OnInit {
     loadUser(){ 
       let localUser = this.storage.getLocalUser();
         if (localUser && localUser.email) {
-          this.cadastro.findByEmail(this.data.email)
+          this.cadastro.findByEmail(this.main.data.email)
             .subscribe(response => {
+              console.log(response)
               this.ac = response as AccountDTO;
-              this.membro = this.ac.membros
-              this.user = this.ac.id
+              this.postMembro(this.ac.id);
+             
               
             },
             error => {

@@ -5,9 +5,10 @@ import { Membro } from 'src/model/membro';
 import { AccountDTO } from 'src/model/accountDTO';
 import { Observable } from 'rxjs';
 import { StorageService } from '../storageService';
+import { Cadastro } from 'src/model/cadastro';
 
 @Injectable()
-export class Cadastro{ 
+export class CadastroService{ 
 
 
     constructor(

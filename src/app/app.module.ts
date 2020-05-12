@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { Auth } from './services/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from './services/storageService';
-import { Cadastro } from './services/domain/cadastro-service';
+import { CadastroService } from './services/domain/cadastro-service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +29,7 @@ import { Cadastro } from './services/domain/cadastro-service';
 
     Auth,
     StorageService,
-    Cadastro 
+    CadastroService
   ],
   bootstrap: [AppComponent]
 })
