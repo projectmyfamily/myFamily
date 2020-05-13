@@ -63,6 +63,11 @@ export class CadperfilPage implements OnInit {
    
   }
 
+  voltar() {
+
+    this.navCtrl.back();
+  }
+
   finalizar() {
       if(this.membro.pin == this.confirme) {
         this.postAccount()
