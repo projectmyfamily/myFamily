@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>addtarefa</ion-title>
+    <img class="logo" src="assets/LogoNome.png">
+    
+    <ion-avatar (click)="voltar()" slot="end" class="perfil">
+      <img src="assets/add.svg">
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <div class="forms">
+      <ion-item>
+        <ion-input type="text" name="tarefa" placeholder="Tarefa"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" name="pontacao" placeholder="E-mail"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-item>
+          <ion-select placeholder="Dono da Tarefa">
+            <ion-select-option>Pai</ion-select-option>
+            <ion-select-option>Mãe</ion-select-option>
+            <ion-select-option>Avô</ion-select-option>
+            <ion-select-option>Filho(a)</ion-select-option>
+            <ion-select-option>Avó</ion-select-option>
+            <ion-select-option>Primo</ion-select-option>
+          </ion-select>
+        </ion-item>>
+      </ion-item>
+  </div>
 
 </ion-content>
