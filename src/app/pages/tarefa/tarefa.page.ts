@@ -1,3 +1,4 @@
+import { ModaltarefaPage } from './../modaltarefa/modaltarefa.page';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
 import { ModalperfilPage } from '../modalperfil/modalperfil.page';
@@ -33,7 +34,16 @@ export class TarefaPage implements OnInit {
     this.navCtrl.navigateForward('/addtarefa');
   }
 
+  async modalTarefa() {
 
+    const modaltarefa = await this.modalCtrl.create({
+      component: ModaltarefaPage
+      
+    });
+
+    modaltarefa.present();
+
+  }
 
   
 

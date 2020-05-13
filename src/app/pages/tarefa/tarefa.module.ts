@@ -1,3 +1,4 @@
+import { ModaltarefaPage } from './../modaltarefa/modaltarefa.page';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +17,7 @@ import { ModalperfilPage } from '../modalperfil/modalperfil.page';
     IonicModule,
     TarefaPageRoutingModule
   ],
-  declarations: [TarefaPage, ModalperfilPage],
-  entryComponents: [ModalperfilPage]
+  declarations: [TarefaPage, ModalperfilPage, ModaltarefaPage],
+  entryComponents: [ModalperfilPage, ModaltarefaPage]
 })
 export class TarefaPageModule {}

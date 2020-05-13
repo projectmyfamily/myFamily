@@ -89,6 +89,10 @@ const routes: Routes = [
   {
     path: 'addperfil',
     loadChildren: () => import('./pages/addperfil/addperfil.module').then( m => m.AddperfilPageModule)
+  },
+  {
+    path: 'modaltarefa',
+    loadChildren: () => import('./pages/modaltarefa/modaltarefa.module').then( m => m.ModaltarefaPageModule)
   }
 ];
 @NgModule({

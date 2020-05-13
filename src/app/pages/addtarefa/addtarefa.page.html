@@ -1,14 +1,20 @@
 <ion-header>
   <ion-toolbar>
     <img class="logo" src="assets/LogoNome.png">
-    
-    <ion-avatar (click)="voltar()" slot="end" class="perfil">
-      <img src="assets/add.svg">
-    </ion-avatar>
+
+    <ion-buttons (click)="voltar()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="ion-text-center container titulo">
+    <span>Adicionar Tarefa</span>
+  </div>
   
   <div class="forms">
       <ion-item>
@@ -18,17 +24,18 @@
         <ion-input type="text" name="pontacao" placeholder="E-mail"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-item>
-          <ion-select placeholder="Dono da Tarefa">
-            <ion-select-option>Pai</ion-select-option>
-            <ion-select-option>Mãe</ion-select-option>
-            <ion-select-option>Avô</ion-select-option>
-            <ion-select-option>Filho(a)</ion-select-option>
-            <ion-select-option>Avó</ion-select-option>
-            <ion-select-option>Primo</ion-select-option>
-          </ion-select>
-        </ion-item>>
+        <ion-label>Dono da Tarefa</ion-label>
+        <ion-select ok-text="Ok" cancel-text="Cancelar">
+        <ion-select-option value="João(Pai)">João(Pai)</ion-select-option>
+        <ion-select-option value="Wania(Mãe)">Wania(Mãe)</ion-select-option>
+        <ion-select-option value="Avô">Avô</ion-select-option>
+        <ion-select-option value="Filho(a)">Filho(a)</ion-select-option>
+        <ion-select-option value="Avó">Avó</ion-select-option>
+        <ion-select-option value="Primo">Primo</ion-select-option>
+        </ion-select>
       </ion-item>
-  </div>
+   </div>
+
+   <ion-button class="ion-text-center btnSeguir">Adicionar</ion-button>
 
 </ion-content>

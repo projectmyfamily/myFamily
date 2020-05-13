@@ -13,8 +13,12 @@ export class CadperfilPage implements OnInit {
   ngOnInit() {
   }
 
+  voltar() {
+
+    this.navCtrl.back();
+  }
+
   finalizar() {
-      
       this.navCtrl.navigateForward('/perfil');
   }
 
