@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Membro } from 'src/model/membro';
+import { CadastroService } from 'src/app/services/domain/cadastro-service';
+import { AccountDTO } from 'src/model/accountDTO';
+import { StorageService } from 'src/app/services/storageService';
 
 @Component({
   selector: 'app-addperfil',
@@ -8,9 +12,28 @@ import { NavController } from '@ionic/angular';
 })
 export class AddperfilPage implements OnInit {
 
-  constructor(public navCtrl: NavController) { }
+cad: Membro = { 
+  nome: null,
+  nascimento: null,
+  parentesco: null, 
+  responsabilidade: false,
+  pin: null
+}
+confirme: any = null
+ac: any
+teste: AccountDTO
+
+  constructor(
+    public navCtrl: NavController,
+    public cadastrar: CadastroService,
+    public storage: StorageService
+    
+    ) { }
 
   ngOnInit() {
+    this.loadUser()
+    console.log(this.teste)
+    
   }
 
   voltar() {
@@ -19,7 +42,44 @@ export class AddperfilPage implements OnInit {
   }
 
   adicionar(){
-
+    let localUser = this.storage.getLocalUser()
+    this.cadastrar.findByEmail(localUser.email)
+    .subscribe(response => { 
+      this.ac = response as AccountDTO
+    })
+    if(this.cad.pin == this.confirme){ 
+      this.cadastrar.cadastrarMembro(this.cad, this.ac.id)
+      .subscribe(response =>{ 
+        console.log(response)
+        this.voltar()
+      }, error => { 
+        console.log("Erro ao ao cadastrar")
+      }
+      );
+    }
     
+  }
+
+  loadUser(){ 
+    let localUser = this.storage.getLocalUser();
+      if (localUser && localUser.email) {
+        this.cadastrar.findByEmail(localUser.email)
+          .subscribe(response => {
+            //console.log(response)
+            this.ac = response as AccountDTO;
+            this.teste = this.ac
+          
+           
+            
+          },
+          error => {
+            if (error.status == 403) {
+            }
+          });
+      }
+      else {
+      
+      }    
+  
   }
 }

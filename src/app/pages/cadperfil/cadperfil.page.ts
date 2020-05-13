@@ -79,13 +79,14 @@ export class CadperfilPage implements OnInit {
   }
 
     postMembro(id){ 
+      
       this.cadastro.cadastrarMembro(this.membro, id).subscribe(
         response=>{ 
           console.log("Membro cadastrado com sucesso!")
           this.navCtrl.navigateForward('/perfil');
 
       }), erro =>{ 
-        
+        console.log(erro)
       }
       
     }
@@ -99,7 +100,9 @@ export class CadperfilPage implements OnInit {
             senha: this.main.data.senha
 
           }
+          
           this.auth.login(cad).subscribe(resp =>{ 
+            this.auth.successLogin(resp.headers.get('Authorization'))
             console.log("Login Success")
             this.loadUser()
             
@@ -117,11 +120,11 @@ export class CadperfilPage implements OnInit {
 
     //metodo de busca na API 
     loadUser(){ 
+      console.log("passou aqui")
       let localUser = this.storage.getLocalUser();
         if (localUser && localUser.email) {
           this.cadastro.findByEmail(this.main.data.email)
             .subscribe(response => {
-              console.log(response)
               this.ac = response as AccountDTO;
               this.postMembro(this.ac.id);
              
