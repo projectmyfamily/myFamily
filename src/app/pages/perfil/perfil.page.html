@@ -1,26 +1,36 @@
 <ion-header>
   <ion-toolbar>
     <img class="logo" src="assets/logo2.svg">
+    <span class="ion-text-center perfil">Perfil</span>
     <ion-buttons (click)="sair()" class="voltar" slot="end">
       <ion-button>
         Sair
       </ion-button>
     </ion-buttons>
+    
   </ion-toolbar>
+  
 </ion-header>
 
+
+
 <ion-content>
- <span class="ion-text-center perfil">Perfil</span>
- <div (click)="addperfil()" class="ion-button container ion-text-center btnadd">
-   <img src="assets/add.svg">
- </div>
+
+
+ 
+
+ <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <img (click)="addperfil()" class="add" src="assets/add.svg"> 
+</ion-fab>
+ 
 <p></p>
  <div *ngFor="let membro of membro">
     <div class="ion-button container ion-text-center btnadd">
-        <img style="width:25%;" src="assets/emoji.svg">
+        <img style="width:15%;" src="assets/emoji.svg">
         <p>{{membro.nome}}</p>
       </div>
  </div>
+ 
 
  
 

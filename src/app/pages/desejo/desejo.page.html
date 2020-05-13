@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>desejo</ion-title>
+    <img class="logo" src="assets/LogoNome.png">
+    
+    <ion-avatar (click)="abrirmodaldesejo()" slot="end" class="perfil">
+      <img src="assets/add.svg">
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+      <img (click)="add()" class="add" src="assets/addtarefa.svg"> 
+  </ion-fab>
+  
+  <span class="ion-text-center tarefas">Meus Desejos</span>
+
+ <div class="cor">
+  <ion-card (click)="modalTarefa()">
+    <ion-card-header>
+      <ion-card-title class="p1">Lavar Louça</ion-card-title>
+      <p class="p2">Matheus (Filho)</p>
+      <p class="p3">30</p>
+    </ion-card-header>
+  </ion-card>
+  
+ </div>
+
 
 </ion-content>
