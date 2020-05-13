@@ -12,14 +12,7 @@ ion-content{
     font-family: lato;
     color: #FAFF03;
 }
-.btnadd{
 
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 50%;
-
-}
 
 .perfil{
 
@@ -30,6 +23,11 @@ ion-content{
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 90%;
+    bottom: 22%;
 
+}
+
+.add{
+
+    width: 50px;
 }

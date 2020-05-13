@@ -8,14 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModaltarefaPage implements OnInit {
 
-  
 
   constructor(public modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
 
-  voltar(){
+  voltar() {
 
     this.modalCtrl.dismiss();
   }
