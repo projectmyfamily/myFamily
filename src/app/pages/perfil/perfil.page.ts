@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import { CadastroService } from 'src/app/services/domain/cadastro-service';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountDTO } from 'src/model/accountDTO';
@@ -18,11 +18,14 @@ export class PerfilPage implements OnInit {
   constructor(
     public navCtrl: NavController,
     public cadastro: CadastroService,
-    public storage: StorageService
+    public storage: StorageService,
+
     ) { }
 
   ngOnInit() {
+
     this.loadUser()
+    
   }
 
 
@@ -40,7 +43,7 @@ export class PerfilPage implements OnInit {
           this.ac = response as AccountDTO;
           console.log(this.ac)
           this.membro = this.ac.membros
-          
+         
            
             
           },

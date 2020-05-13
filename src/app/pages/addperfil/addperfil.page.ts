@@ -16,12 +16,13 @@ cad: Membro = {
   nome: null,
   nascimento: null,
   parentesco: null, 
-  responsabilidade: false,
-  pin: null
+  pin: null,
+  tipo: 1
 }
 confirme: any = null
 ac: any
 teste: AccountDTO
+responsabilidade: boolean = false
 
   constructor(
     public navCtrl: NavController,
@@ -48,6 +49,9 @@ teste: AccountDTO
       this.ac = response as AccountDTO
     })
     if(this.cad.pin == this.confirme){ 
+      if(this.responsabilidade == true){ 
+        this.cad.tipo = 0
+      }
       this.cadastrar.cadastrarMembro(this.cad, this.ac.id)
       .subscribe(response =>{ 
         console.log(response)

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import { Auth } from 'src/app/services/auth';
 import { CredenciaisDTO } from 'src/model/credenciaisDTO';
+import { StorageService } from 'src/app/services/storageService';
+
+
 
 @Component({
   selector: 'app-login',
@@ -17,18 +20,25 @@ creds: CredenciaisDTO = {
 }
 
 
+loading: any;
 
   constructor(
     public navCtrl: NavController,
-    public auth: Auth
+    public auth: Auth,
+    public storage: StorageService,
+    public loadingController:LoadingController
     
     ) { 
 
-
+      if(this.storage.getLocalUser() != null) { 
+        this.navCtrl.navigateForward(['/perfil'])
+      }
     }
 
   ngOnInit() {
+   
   }
+
 
 
   cadastrar(){
@@ -48,6 +58,8 @@ creds: CredenciaisDTO = {
     
    
   }
+
+
 
 
 
