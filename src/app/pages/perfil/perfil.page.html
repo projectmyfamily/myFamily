@@ -27,7 +27,7 @@
  <div *ngFor="let membro of membro">
     <div class="ion-button container ion-text-center btnadd">
         <img style="width:15%;" src="assets/emoji.svg">
-        <p>{{membro.nome}}</p>
+        <p (click)="home(membro)">{{membro.nome}}</p>
       </div>
  </div>
  

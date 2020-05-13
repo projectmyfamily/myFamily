@@ -59,4 +59,10 @@ export class PerfilPage implements OnInit {
 
     this.navCtrl.navigateBack('/addperfil');
   }
+
+
+  home(m){ 
+    this.storage.setLocalMember(m)
+    this.navCtrl.navigateBack('/tabs/home');
+  }
 }

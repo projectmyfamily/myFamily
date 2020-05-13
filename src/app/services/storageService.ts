@@ -24,4 +24,22 @@ export class StorageService{
         }
 
     }
+
+    getLocalMember(){ 
+        let usr = localStorage.getItem(StorageKeys.LocalMember)
+        if(usr == null){ 
+            return null
+        }else{
+            return JSON.parse(usr)
+        }
+    }
+    setLocalMember(obj: LocalUser){ 
+        if(obj == null){
+            localStorage.removeItem(StorageKeys.LocalMember)
+        }else{
+            localStorage.setItem(StorageKeys.LocalMember, JSON.stringify(obj))
+        }
+
+    }
+    
 }
