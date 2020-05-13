@@ -85,6 +85,10 @@ const routes: Routes = [
   {
     path: 'modaltermos',
     loadChildren: () => import('./pages/modaltermos/modaltermos.module').then( m => m.ModaltermosPageModule)
+  },
+  {
+    path: 'addperfil',
+    loadChildren: () => import('./pages/addperfil/addperfil.module').then( m => m.AddperfilPageModule)
   }
 ];
 @NgModule({

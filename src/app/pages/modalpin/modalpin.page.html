@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modalpin</ion-title>
+    <img class="logo" src="assets/LogoNome.png">
+    <ion-buttons (click)="voltar()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="container ion-text-center titulo">
+    <span>
+        Digite o seu PIN:
+    </span>
+  </div>
+
+  <p class="ion-text-center p1">É necessário seu PIN para acessar o perfil.</p>
+
+  <p class="ion-text-center p2" (click)="esqueceusenha()">Esqueci meu PIN!</p>
+
+  <div class="forms">
+    <ion-item>
+      <ion-input type="text" placeholder="PIN"></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-button (click)="entrar()" class="ion-text-center btnSeguir">Entrar</ion-button>
 
 </ion-content>

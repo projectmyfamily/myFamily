@@ -55,11 +55,8 @@ export class PerfilPage implements OnInit {
   
   }
 
+  addperfil() {
 
-
- 
-
-
-
-
+    this.navCtrl.navigateBack('/addperfil');
+  }
 }

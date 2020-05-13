@@ -30,4 +30,6 @@ export class TarefaPage implements OnInit {
     this.navCtrl.navigateForward('/addtarefa');
   }
 
+  
+
 }
