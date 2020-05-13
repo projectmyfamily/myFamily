@@ -32,8 +32,9 @@
 ion-card{
 
     position: absolute;
-    bottom: 63%;
+    bottom: 65%;
     width: 340px;
+    
 }
 
 .cor{
@@ -43,24 +44,41 @@ ion-card{
 
 .p1{
 
-    color: #FAFF03;
-    font-family: lato;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 .p2{
 
     color: #FAFF03;
     font-family: lato;
+    position: absolute;
+    left: 67%;
+    right: 0;
+    bottom: 47%;
 
 }
 
 .p3{
 
     color: #FAFF03;
-    font-size: 29px;
+    font-size: 20px;
     position: absolute;
-    left: 80%;
+    left: 65%;
     right: 0;
-    bottom: 5%;
+    bottom: -4px;
     font-family: lato;
+}
+
+.p0{
+
+    color: #FAFF03;
+    font-size: 18px;
+    position: absolute;
+    left: 26%;
+    right: 0;
+    bottom: 14px;
+    font-family: lato;
+
 }

@@ -1,3 +1,5 @@
+import { DesejoPageModule } from './../desejo/desejo.module';
+import { DesejoPage } from './../desejo/desejo.page';
 import { TarefaPageModule } from './../tarefa/tarefa.module';
 import { HomePageModule } from './../home/home.module';
 import { TarefaPage } from './../tarefa/tarefa.page';
@@ -19,9 +21,10 @@ import { ModalperfilPage } from './modalperfil.page';
     IonicModule,
     ModalperfilPageRoutingModule,
     HomePageModule,
-    TarefaPageModule
+    TarefaPageModule,
+    DesejoPageModule
   ],
-  declarations: [ModalperfilPage, HomePage, TarefaPage],
+  declarations: [ModalperfilPage, HomePage, TarefaPage, DesejoPage],
   exports: [ModalperfilPage]
 })
 export class ModalperfilPageModule {}

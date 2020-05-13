@@ -1,9 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>adddesejo</ion-title>
+    <img class="logo" src="assets/LogoNome.png">
+
+    <ion-buttons (click)="voltar()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="ion-text-center container titulo">
+    <span>Adicionar Desejo</span>
+  </div>
+  
+  <div class="forms">
+      <ion-item>
+        <ion-input type="text" name="desejo" placeholder="Desejo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" name="pontacao" placeholder="Pontuação"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Dono do Desejo</ion-label>
+        <ion-select ok-text="Ok" cancel-text="Cancelar">
+        <ion-select-option value="João(Pai)">João(Pai)</ion-select-option>
+        <ion-select-option value="Wania(Mãe)">Wania(Mãe)</ion-select-option>
+        <ion-select-option value="Avô">Avô</ion-select-option>
+        <ion-select-option value="Filho(a)">Filho(a)</ion-select-option>
+        <ion-select-option value="Avó">Avó</ion-select-option>
+        <ion-select-option value="Primo">Primo</ion-select-option>
+        </ion-select>
+      </ion-item>
+   </div>
+
+   <ion-button class="ion-text-center btnSeguir">Adicionar Desejo</ion-button>
 
 </ion-content>
