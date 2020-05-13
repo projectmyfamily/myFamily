@@ -9,6 +9,9 @@ import { ModalperfilPage } from '../modalperfil/modalperfil.page';
 })
 export class TarefaPage implements OnInit {
 
+  ListaTarefas: any = [];
+  tarefa: any = null;
+
   constructor(public modalCtrl: ModalController, public navCtrl: NavController) { }
 
   ngOnInit() {
@@ -29,6 +32,8 @@ export class TarefaPage implements OnInit {
 
     this.navCtrl.navigateForward('/addtarefa');
   }
+
+
 
   
 
