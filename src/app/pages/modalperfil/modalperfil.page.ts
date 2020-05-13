@@ -43,12 +43,29 @@ export class ModalperfilPage implements OnInit {
       subHeader: 'MyFamily',
       message: 'Se sair do perfil, só podera retornar após digitar seu PIN novamente.',
 
-      buttons: ['OK', 'Cancelar']
-    });
+      buttons: [{
+        text: 'Cancelar',
+        role: 'cancelar',
+        handler: () => {
+          
+        }
+      },
+      {
+        text: 'Ok',
+        handler: () => {
+          this.navCtrl.navigateBack(['/perfil'])
+          this.modalCtrl.dismiss();
+        }
+      }
+    ]
+  });
+    
 
     alert.present();
 
   }
+
+  
 
 
 

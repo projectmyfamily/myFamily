@@ -25,13 +25,8 @@
       </ion-item>
       <ion-item>
         <ion-label>Dono da Tarefa</ion-label>
-        <ion-select ok-text="Ok" cancel-text="Cancelar">
-        <ion-select-option value="João(Pai)">João(Pai)</ion-select-option>
-        <ion-select-option value="Wania(Mãe)">Wania(Mãe)</ion-select-option>
-        <ion-select-option value="Avô">Avô</ion-select-option>
-        <ion-select-option value="Filho(a)">Filho(a)</ion-select-option>
-        <ion-select-option value="Avó">Avó</ion-select-option>
-        <ion-select-option value="Primo">Primo</ion-select-option>
+        <ion-select *ngFor="let m of membros" ok-text="Ok" cancel-text="Cancelar">
+        <ion-select-option value="João(Pai)">{{m.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
    </div>
