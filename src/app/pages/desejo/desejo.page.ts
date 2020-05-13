@@ -39,7 +39,7 @@ export class DesejoPage implements OnInit {
 
   add() {
 
-    this.navCtrl.navigateForward('/addtarefa');
+    this.navCtrl.navigateForward('/adddesejo');
   }
 
 }
