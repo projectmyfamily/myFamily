@@ -16,7 +16,6 @@ export class TarefaPage implements OnInit {
   listaTarefas: any = [];
   membros: any = null;
   ac: any 
-  lista = ['Victor', "Matheus"]
 
 
 
