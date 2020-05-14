@@ -19,22 +19,22 @@
 <div class="forms">
   {{msg}}
   <ion-item>
-    <ion-input name="cad.nome" [(ngModel)]="cad.nome" type="text" placeholder="Nome da Família"></ion-input>
+    <ion-input name="cad.nome" [(ngModel)]="cad.nome" type="text" required placeholder="Nome da Família"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input name="cad.email" [(ngModel)]="cad.email" type="text" placeholder="E-mail"></ion-input>
+    <ion-input name="cad.email" [(ngModel)]="cad.email" type="email" required placeholder="E-mail"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input  name="cad.senha" [(ngModel)]="cad.senha" type="password" placeholder="Senha"></ion-input>
+    <ion-input  name="cad.senha" [(ngModel)]="cad.senha" type="password" required placeholder="Senha"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input name="confirme" [(ngModel)]="confirme" type="password" placeholder="Confirme a senha"></ion-input>
+    <ion-input name="confirme" [(ngModel)]="confirme" type="password" required placeholder="Confirme a senha"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input   type="text" placeholder="Cidade"></ion-input>
+    <ion-input   type="text" required placeholder="Cidade"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Estado"></ion-input>
+    <ion-input type="text" required placeholder="Estado"></ion-input>
   </ion-item>
 </div>
 

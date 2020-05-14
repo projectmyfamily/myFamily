@@ -16,7 +16,7 @@ creds: CredenciaisDTO = {
 
 }
 
-
+err: string 
 
   constructor(
     public navCtrl: NavController,
@@ -44,6 +44,7 @@ creds: CredenciaisDTO = {
 
     }), erro =>{ 
       console.log(erro)
+      this.err = "Email ou senha incorretos!"
     }
     
    
