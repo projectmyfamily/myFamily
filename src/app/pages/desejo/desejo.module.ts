@@ -18,7 +18,7 @@ import { ModaldesejoPage } from '../modaldesejo/modaldesejo.page';
     IonicModule,
     DesejoPageRoutingModule
   ],
-  declarations: [DesejoPage, ModalperfilPage, ModaldesejoPage],
-  entryComponents: [ModalperfilPage, ModaldesejoPage]
+  declarations: [DesejoPage, ModaldesejoPage],
+  entryComponents: [ModaldesejoPage]
 })
 export class DesejoPageModule {}

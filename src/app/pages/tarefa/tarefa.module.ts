@@ -17,7 +17,7 @@ import { ModalperfilPage } from '../modalperfil/modalperfil.page';
     IonicModule,
     TarefaPageRoutingModule
   ],
-  declarations: [TarefaPage, ModalperfilPage, ModaltarefaPage],
-  entryComponents: [ModalperfilPage, ModaltarefaPage]
+  declarations: [TarefaPage, ModaltarefaPage],
+  entryComponents: [ModaltarefaPage]
 })
 export class TarefaPageModule {}
