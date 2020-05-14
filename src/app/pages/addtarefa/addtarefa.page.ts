@@ -4,6 +4,7 @@ import { CadastroService } from 'src/app/services/domain/cadastro-service';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountDTO } from 'src/model/accountDTO';
 import { TarefaDTO } from 'src/model/tarefaDTO';
+import { TarefaService } from 'src/app/services/domain/tarefa-service';
 
 @Component({
   selector: 'app-addtarefa',
@@ -33,7 +34,8 @@ export class AddtarefaPage implements OnInit {
     public cadastro: CadastroService,
     public storage: StorageService,
     public alertCtrl: AlertController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private crud: TarefaService
     ) { }
 
   ngOnInit() {
@@ -76,9 +78,24 @@ export class AddtarefaPage implements OnInit {
 
 
 add(){ 
-  console.log(this.cad)
-  console.log(this.recebedor)
-this.alertTarefas()
+let id = this.buscaMembros()
+this.crud.insert(this.cad, id).subscribe(response =>{ 
+console.log(response)
+}, error =>{ 
+  console.log(error)
+}
+)
+
+}
+
+
+buscaMembros(){
+  var index = this.membros.map(function(element) {
+    return element.nome
+  }).indexOf(this.recebedor)
+  console.log(index)
+  return this.membros[index].id
+
 
 }
 

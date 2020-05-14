@@ -15,7 +15,7 @@ export class TarefaService{
 
 
     insert(cad: TarefaDTO, id){
-        this.http.post(`${API_CONFIG.baseUrl}/tarefas/membros/${id}`,
+       return  this.http.post(`${API_CONFIG.baseUrl}/tarefas/membros/${id}`,
         cad, { 
             observe: 'response',
             responseType: 'text'

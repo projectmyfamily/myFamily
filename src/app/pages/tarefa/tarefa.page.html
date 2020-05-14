@@ -16,12 +16,12 @@
   
   <span class="ion-text-center tarefas">Suas Tarefas</span>
 
- <div class="cor">
-  <ion-card (click)="modalTarefa()">
+ <div *ngFor="let t of listaTarefas" class="cor">
+  <ion-card  (click)="modalTarefa()">
     <ion-card-header>
-      <ion-card-title class="p1">Lavar Louça</ion-card-title>
-      <p class="p2">Matheus (Filho)</p>
-      <p class="p3">30</p>
+      <ion-card-title class="p1">{{t.nome}}</ion-card-title>
+      <p class="p2">Nível de Dificuldade: {{t.nivel}}</p>
+      <p class="p3">{{t.pontuacao}}</p>
     </ion-card-header>
   </ion-card>
   
