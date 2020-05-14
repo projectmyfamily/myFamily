@@ -81,5 +81,13 @@
   
   --ion-toolbar-background: #515151;
 
+  --ion-font-family: 'Lato-Black';
+
+  @font-face {
+    font-family: 'Lato-Black';
+    src: url('../assets/fonts/Lato-Black.ttf');
+  }
+  
+
 }
 

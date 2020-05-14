@@ -19,7 +19,7 @@ export class DesejoPage implements OnInit {
 
     const modaldesejo = await this.modalCtrl.create({
       component: ModaldesejoPage
-      
+
     });
 
     modaldesejo.present();

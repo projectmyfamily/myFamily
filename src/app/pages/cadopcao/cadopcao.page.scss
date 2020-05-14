@@ -4,7 +4,7 @@
 }
 .voltar{
 
-    font-family: lato;
+    --ion-font-family: 'Lato-Black';
     color: #FAFF03;
 }
 
@@ -14,7 +14,7 @@
    left: 0;
    right: 0;
    bottom: 89%;
-   font-family: lato;
+   --ion-font-family: 'Lato-Black';
    font-size: 22px;
    font-weight: bold;
    color: #515151;
@@ -31,7 +31,7 @@
 
         font-size: 16px;
         color: #515151;
-        font-family: lato;
+        --ion-font-family: 'Lato-Black';
         
 
     }
@@ -47,7 +47,7 @@
 
         font-size: 16px;
         color: #515151;
-        font-family: lato;
+        --ion-font-family: 'Lato-Black';
         
 
     }
