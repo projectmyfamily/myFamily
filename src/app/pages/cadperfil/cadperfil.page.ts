@@ -16,9 +16,6 @@ import { Cadastro } from 'src/model/cadastro';
   styleUrls: ['./cadperfil.page.scss'],
 })
 export class CadperfilPage implements OnInit {
-
-
-
   
 
   membro: Membro = { 
@@ -35,8 +32,7 @@ export class CadperfilPage implements OnInit {
 
   //informações da conta em stand by para envio
   main: any
-
-
+  
   ac: any
   user: any
 
@@ -118,7 +114,8 @@ export class CadperfilPage implements OnInit {
          
 
         }, erro =>{ 
-          console.log("Erro no cadastro conta ")
+          console.log("Erro ao cadastrar conta ")
+        
 
         }
       )

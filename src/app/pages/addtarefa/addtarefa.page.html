@@ -16,12 +16,12 @@
     <span>Adicionar Tarefa</span>
   </div>
   
-  <div class="forms">
+  <form class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
       <ion-item>
-        <ion-input type="text" name="tarefa" placeholder="Tarefa"></ion-input>
+        <ion-input type="text" name="tarefa" required placeholder="Tarefa" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" name="pontacao" placeholder="Pontuação"></ion-input>
+        <ion-input type="text" name="pontacao" required placeholder="Pontuação"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Dono da Tarefa</ion-label>
@@ -29,8 +29,14 @@
         <ion-select-option value="João(Pai)">{{m.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
-   </div>
+      <ion-item>
+        <ion-input type="text" name="observacoes" required placeholder="Observações"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="date" name="prazo" required placeholder="Prazo"></ion-input>
+      </ion-item>
+    </form>
 
-   <ion-button class="ion-text-center btnSeguir">Adicionar</ion-button>
+   <ion-button class="ion-text-center btnSeguir" [disabled] = "fc.invalid">Adicionar</ion-button>
 
 </ion-content>

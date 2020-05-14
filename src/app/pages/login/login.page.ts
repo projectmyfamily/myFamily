@@ -18,7 +18,7 @@ creds: CredenciaisDTO = {
   senha: null
 
 }
-
+ err: string;
 
 loading: any;
 
@@ -54,6 +54,7 @@ loading: any;
 
     }), erro =>{ 
       console.log(erro)
+      this.err = "Email ou senha incorretos!"
     }
     
    
