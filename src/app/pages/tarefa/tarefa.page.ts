@@ -69,7 +69,7 @@ export class TarefaPage implements OnInit {
          console.log(response)
         this.membros = this.ac.membros
       this.listaTarefas = this.membros[this.buscaMembros()].tarefas
-      console.log(this.listaTarefas)
+    
            
             
           },
