@@ -41,6 +41,7 @@ export class ModalperfilPage implements OnInit {
   creditos() {
 
     this.navCtrl.navigateForward('/credito');
+    this.modalCtrl.dismiss();
   }
 
   edit() {

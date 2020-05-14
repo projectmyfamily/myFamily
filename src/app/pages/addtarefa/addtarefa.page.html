@@ -18,19 +18,26 @@
   
   <div class="forms">
       <ion-item>
-        <ion-input type="text" name="tarefa" placeholder="Tarefa"></ion-input>
+        <ion-input type="text" name="cad.nome" [(ngModel)]="cad.nome" placeholder="Tarefa"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" name="pontacao" placeholder="Pontuação"></ion-input>
+        <ion-input type="number" name="cad.pontacao" [(ngModel)]="cad.pontuacao" placeholder="Pontuação"></ion-input>
       </ion-item>
+      <ion-item>
+          <ion-select [(ngModel)]="cad.nivel" name="cad.nivel" placeholder="Nível"  ok-text="Ok" cancel-text="Cancelar">
+              <ion-select-option value="1">Nível 1</ion-select-option>
+              <ion-select-option value="2">Nível 2</ion-select-option>
+              <ion-select-option value="3">Nível 3</ion-select-option>
+              </ion-select>
+        </ion-item>
       <ion-item>
         <ion-label>Dono da Tarefa</ion-label>
-        <ion-select *ngFor="let m of membros" ok-text="Ok" cancel-text="Cancelar">
-        <ion-select-option value="João(Pai)">{{m.nome}}</ion-select-option>
+        <ion-select [(ngModel)]="recebedor" name="recebedor" *ngFor="let m of membros" ok-text="Ok" cancel-text="Cancelar">
+        <ion-select-option value="{{m.nome}}">{{m.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
    </div>
 
-   <ion-button class="ion-text-center btnSeguir">Adicionar</ion-button>
+   <ion-button (click)="add()" class="ion-text-center btnSeguir">Adicionar</ion-button>
 
 </ion-content>

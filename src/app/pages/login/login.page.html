@@ -6,20 +6,21 @@
   </div>
 
   <div class="ion-padding">
-
+   
     <section>
     <span class="ion-text-center titulo">Login</span>
     </section>
+    
   <div class="inputs">
+    <p style="color:yellow; text-align: center">{{msg}}</p>
     <ion-item class="ion-margin-top" color="light" lines="none">
-        <ion-input name="creds.email" [(ngModel)]="creds.email" type="text" placeholder="Login"></ion-input>
+      <ion-input name="creds.email" [(ngModel)]="creds.email" type="text" placeholder="Login"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-top" color="light" lines="none">
       <ion-input name="creds.senha" [(ngModel)]="creds.senha" type="password" placeholder="Senha"></ion-input>
   </ion-item>
   </div>
   </div>
- 
     <div class="container ion-text-center">
 
     <ion-button (click)="logar()" class="btnLogin">Entrar</ion-button>

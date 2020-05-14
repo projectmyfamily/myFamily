@@ -26,12 +26,12 @@ export class CadperfilPage implements OnInit {
     nascimento: null, 
     parentesco: null, 
     pin: null,
-    tipo: 1
+    tipo: 0
   }
 
   confirme = null
   msg = null
-  responsabilidade: boolean = false
+  
 
   //informações da conta em stand by para envio
   main: any
@@ -85,9 +85,6 @@ export class CadperfilPage implements OnInit {
   }
 
     postMembro(id){ 
-      if(this.responsabilidade == true){ 
-        this.membro.tipo = 0
-      }
       this.cadastro.cadastrarMembro(this.membro, id).subscribe(
         response=>{ 
           console.log("Membro cadastrado com sucesso!")

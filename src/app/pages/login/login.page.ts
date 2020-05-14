@@ -19,7 +19,7 @@ creds: CredenciaisDTO = {
 
 }
 
-
+msg: any
 loading: any;
 
   constructor(
@@ -52,9 +52,11 @@ loading: any;
       this.auth.successLogin(response.headers.get('Authorization'))
      this.navCtrl.navigateForward('/perfil');
 
-    }), erro =>{ 
-      console.log(erro)
+    }, error => { 
+      this.msg = "Login ou senha incorretos"
     }
+    
+    )
     
    
   }
