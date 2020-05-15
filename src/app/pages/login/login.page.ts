@@ -26,11 +26,9 @@ loading: any;
     public navCtrl: NavController,
     public auth: Auth,
     public storage: StorageService,
-    public loadingController:LoadingController
-    
-    ) { 
+    public loadingController:LoadingController) {
 
-      if(this.storage.getLocalUser() != null) { 
+      if (this.storage.getLocalUser() != null) {
         this.navCtrl.navigateForward(['/perfil'])
       }
     }
