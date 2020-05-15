@@ -16,30 +16,30 @@
         Criar conta MyFamily
     </span>
   </div>
-<div class="forms">
+<form class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
   {{msg}}
   <ion-item>
-    <ion-input name="cad.nome" [(ngModel)]="cad.nome" type="text" placeholder="Nome da Família"></ion-input>
+    <ion-input name="cad.nome" [(ngModel)]="cad.nome" type="text" minlength="5" maxlength="15" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"  required placeholder="Nome da Família"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input name="cad.email" [(ngModel)]="cad.email" type="text" placeholder="E-mail"></ion-input>
+    <ion-input name="cad.email" [(ngModel)]="cad.email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input  name="cad.senha" [(ngModel)]="cad.senha" type="password" placeholder="Senha"></ion-input>
+    <ion-input  name="cad.senha" [(ngModel)]="cad.senha" type="password"  minlength="3" maxlength="8" required placeholder="Senha"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input name="confirme" [(ngModel)]="confirme" type="password" placeholder="Confirme a senha"></ion-input>
+    <ion-input name="confirme" [(ngModel)]="confirme" type="password" minlength="3" maxlength="8" required placeholder="Confirme a senha"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input   type="text" placeholder="Cidade"></ion-input>
+    <ion-input   type="text" minlength="15" required placeholder="Cidade"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Estado"></ion-input>
+    <ion-input type="text" minlength="15" required placeholder="Estado"></ion-input>
   </ion-item>
-</div>
+</form>
 
 <span (click)="modalTermos()" class="ion-text-center termos">Aceito os termos de privacidade</span>
 
-<ion-button (click)="seguir()" class="ion-text-center btnSeguir">Próximo</ion-button>
+<ion-button (click)="seguir()" [disabled] = "fc.invalid" class="ion-text-center btnSeguir">Próximo</ion-button>
 
 </ion-content>
