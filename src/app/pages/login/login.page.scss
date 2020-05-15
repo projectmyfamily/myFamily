@@ -53,7 +53,7 @@ ion-input{
 
 .inputs{
 
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 ion-content{
@@ -66,7 +66,7 @@ ion-content{
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 30%;
+    bottom: 24%;
     font-family: lato;
     font-size: 16px;
     color: #FAFF03;
@@ -91,10 +91,36 @@ ion-content{
     left: 5%;
     right: 0;
     width: 90%;
-    bottom: 35%;
+    bottom: 37%;
 }
 ion-text{
     font-family: lato;
     font-size: 14px;
     color: #FAFF03;
+}
+.err{
+
+    position: absolute;
+
+}
+
+.btnCad{
+
+    position: absolute;
+    left: 5%;
+    right: 0;
+    width: 90%;
+    bottom: 13%;
+}
+
+p{
+
+    font-family: lato;
+    font-size: 14px;
+    color: #FAFF03;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 31%;
+
 }

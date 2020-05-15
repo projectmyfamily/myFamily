@@ -18,13 +18,8 @@ creds: CredenciaisDTO = {
   senha: null
 
 }
-<<<<<<< HEAD
-
-msg: any
-=======
  err: string;
 
->>>>>>> nicole
 loading: any;
 
   constructor(
@@ -55,25 +50,11 @@ loading: any;
       this.auth.successLogin(response.headers.get('Authorization'))
      this.navCtrl.navigateForward('/perfil');
 
-<<<<<<< HEAD
-    }, error => { 
-      this.msg = "Login ou senha incorretos"
-=======
     }), erro =>{ 
       console.log(erro)
       this.err = "Email ou senha incorretos!"
->>>>>>> nicole
     }
-    
-    )
-    
-   
+
   }
-
-
-
-
-
-
 
 }

@@ -6,43 +6,33 @@
   </div>
 
   <div class="ion-padding">
-<<<<<<< HEAD
-   
-=======
     
->>>>>>> nicole
     <section>
     <span class="ion-text-center titulo">Login</span>
     </section>
     
   <div class="inputs">
-<<<<<<< HEAD
-    <p style="color:yellow; text-align: center">{{msg}}</p>
-    <ion-item class="ion-margin-top" color="light" lines="none">
-      <ion-input name="creds.email" [(ngModel)]="creds.email" type="text" placeholder="Login"></ion-input>
-=======
-    <ion-text>{{err}}</ion-text>
+    <ion-text class="err">{{err}}</ion-text>
     <ion-item class="ion-margin-top" color="light" lines="none">
         <ion-input name="creds.email" [(ngModel)]="creds.email" type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Login"></ion-input>
->>>>>>> nicole
     </ion-item>
     <ion-item class="ion-margin-top" color="light" lines="none">
       <ion-input name="creds.senha" [(ngModel)]="creds.senha" type="password" maxlenght="6" minlenght="3"  required placeholder="Senha"></ion-input>
   </ion-item>
   </div>
   </div>
-<<<<<<< HEAD
-=======
   
  
->>>>>>> nicole
     <div class="container ion-text-center">
 
     <ion-button (click)="logar()" class="btnLogin">Entrar</ion-button>
 
+    <p>Esqueci minha senha!</p>
+
     <span class="ion-text-center ou">OU</span>
 
-    <span class="ion-text-center cadastrar">Sua família ainda não é cadastrada? <a (click)="cadastrar()">Cadastre-se</a></span>
+    <span class="ion-text-center cadastrar">Sua família ainda não é cadastrada?</span>
+    <ion-button class="btnCad" (click)="cadastrar()">Cadastre-se</ion-button>
 
       <span class="slogan">Família por todos, todos por um.</span>
 
