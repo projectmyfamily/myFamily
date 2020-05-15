@@ -30,8 +30,7 @@ export class TarefaPage implements OnInit {
 
   ngOnInit() {
     this.loadUser()
-    
-   
+
   }
   async abrirmodalperfil() {
 
@@ -69,9 +68,7 @@ export class TarefaPage implements OnInit {
          console.log(response)
         this.membros = this.ac.membros
       this.listaTarefas = this.membros[this.buscaMembros()].tarefas
-  
-           
-            
+
           },
           error => {
             console.log(error)

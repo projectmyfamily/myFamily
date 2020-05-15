@@ -1,10 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <img class="logo" src="assets/LogoNome.png">
-    
-    <ion-avatar (click)="abrirmodalperfil()" slot="end" class="perfil">
-      <img src="assets/add.svg">
-    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
@@ -16,17 +12,15 @@
   
   <span class="ion-text-center tarefas">Meus Desejos</span>
 
- <div class="cor">
-  <ion-card (click)="modalDesejo()">
-    <ion-card-header>
+ 
+  <ion-item class="cor" (click)="modalDesejo()">
+    <ion-label>
       <img src="assets/coracaoyelow.svg">
       <p class="p0">Desejo</p>
       <p class="p2">Matheus (Filho)</p>
       <p class="p3">30/1000pts</p>
-    </ion-card-header>
-  </ion-card>
+    </ion-label>
+  </ion-item>
   
- </div>
-
 
 </ion-content>

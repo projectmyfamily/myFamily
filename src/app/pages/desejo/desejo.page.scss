@@ -29,17 +29,17 @@
     bottom: 90%;
 }
 
-ion-card{
-
-    position: absolute;
-    bottom: 65%;
-    width: 340px;
-    
-}
 
 .cor{
 
+    
     --ion-background-color: #515151;
+    position: absolute;
+    bottom: 70%;
+    left: 5%;
+    right: 0;
+    width: 90%;
+    border-radius: 5px;
 }
 
 .p1{
@@ -54,9 +54,9 @@ ion-card{
     color: #FAFF03;
     font-family: lato;
     position: absolute;
-    left: 67%;
+    left: 64%;
     right: 0;
-    bottom: 47%;
+    bottom: 56%;
 
 }
 
@@ -65,9 +65,9 @@ ion-card{
     color: #FAFF03;
     font-size: 20px;
     position: absolute;
-    left: 65%;
+    left: 62%;
     right: 0;
-    bottom: -4px;
+    bottom: 7px;
     font-family: lato;
 }
 
@@ -76,9 +76,9 @@ ion-card{
     color: #FAFF03;
     font-size: 18px;
     position: absolute;
-    left: 26%;
+    left: 23%;
     right: 0;
-    bottom: 14px;
+    bottom: 26px;
     font-family: lato;
 
 }

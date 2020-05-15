@@ -11,8 +11,10 @@
     <span class="ion-text-center titulo">Login</span>
     </section>
     
+    <ion-text class="ion-text-center err">{{msg}}</ion-text>
+
   <div class="inputs">
-    <ion-text>{{msg}}</ion-text>
+    
     <ion-item class="ion-margin-top" color="light" lines="none">
         <ion-input name="creds.email" [(ngModel)]="creds.email" type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Login"></ion-input>
     </ion-item>
@@ -27,9 +29,12 @@
 
     <ion-button (click)="logar()" class="btnLogin">Entrar</ion-button>
 
+    <p (click)="esquecisenha()">Esqueci minha senha!</p>
+
     <span class="ion-text-center ou">OU</span>
 
-    <span class="ion-text-center cadastrar">Sua família ainda não é cadastrada? <a (click)="cadastrar()">Cadastre-se</a></span>
+    <span class="ion-text-center cadastrar">Sua família ainda não é cadastrada?</span>
+    <ion-button class="btnCad" (click)="cadastrar()">Cadastre-se</ion-button>
 
       <span class="slogan">Família por todos, todos por um.</span>
 

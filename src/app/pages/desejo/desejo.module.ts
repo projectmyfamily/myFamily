@@ -7,8 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DesejoPageRoutingModule } from './desejo-routing.module';
 
 import { DesejoPage } from './desejo.page';
-import { ModalperfilPage } from '../modalperfil/modalperfil.page';
-import { ModaltarefaPage } from '../modaltarefa/modaltarefa.page';
+
 import { ModaldesejoPage } from '../modaldesejo/modaldesejo.page';
 
 @NgModule({

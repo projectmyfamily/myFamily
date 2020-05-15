@@ -36,6 +36,7 @@ export class ModalperfilPage implements OnInit {
   historico() {
 
     this.navCtrl.navigateForward('/historico');
+    this.modalCtrl.dismiss();
   }
 
   creditos() {
@@ -47,6 +48,7 @@ export class ModalperfilPage implements OnInit {
   edit() {
 
     this.navCtrl.navigateForward('/cadperfil');
+    this.modalCtrl.dismiss();
   }
 
   async logout() {
@@ -60,7 +62,7 @@ export class ModalperfilPage implements OnInit {
         text: 'Cancelar',
         role: 'cancelar',
         handler: () => {
-          
+
         }
       },
       {

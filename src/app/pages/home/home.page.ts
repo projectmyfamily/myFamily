@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController, AlertController } from '@ionic/angular';
 import { ModalperfilPage } from '../modalperfil/modalperfil.page';
 
 @Component({
@@ -9,7 +9,11 @@ import { ModalperfilPage } from '../modalperfil/modalperfil.page';
 })
 export class HomePage implements OnInit {
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) { }
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    public alertCtrl: AlertController
+    ) { }
 
   ngOnInit() {
   }
@@ -24,5 +28,7 @@ export class HomePage implements OnInit {
 
 
   }
+
+
 
 }

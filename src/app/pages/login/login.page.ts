@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, LoadingController } from '@ionic/angular';
+import { NavController, LoadingController, AlertController } from '@ionic/angular';
 import { Auth } from 'src/app/services/auth';
 import { CredenciaisDTO } from 'src/model/credenciaisDTO';
 import { StorageService } from 'src/app/services/storageService';
@@ -26,7 +26,9 @@ loading: any;
     public navCtrl: NavController,
     public auth: Auth,
     public storage: StorageService,
-    public loadingController:LoadingController) {
+    public loadingController:LoadingController,
+    public alertCtrl: AlertController
+    ) {
 
       if (this.storage.getLocalUser() != null) {
         this.navCtrl.navigateForward(['/perfil'])
@@ -48,21 +50,40 @@ loading: any;
     this.auth.login(this.creds).subscribe(response =>{ 
       console.log(response)
       this.auth.successLogin(response.headers.get('Authorization'))
-     this.navCtrl.navigateForward('/perfil');
+      this.navCtrl.navigateForward('/perfil');
 
     }, error => { 
-      this.msg = "Login ou senha incorretos"
-    }
-    
-    )
-    
-   
+
+      this.alertLoginerrado();
+
+    })
+
   }
 
+  async alertLoginerrado(){ 
+    const alert = await this.alertCtrl.create({
 
+      message: 'Login ou senha incorreta '
+     ,
+      buttons: [{
+        text: 'Fechar',
+        role: 'fechar',
+        handler: () => {
 
+        }
+      },
+    ]
+  });
 
+  alert.present();
 
+  }
+
+  esquecisenha() {
+
+      this.navCtrl.navigateForward('/esquecisenha');
+
+  }
 
 
 }
