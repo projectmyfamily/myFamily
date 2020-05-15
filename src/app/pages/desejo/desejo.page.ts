@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
+import { ModalController, NavController, AlertController } from '@ionic/angular';
 import { ModaldesejoPage } from '../modaldesejo/modaldesejo.page';
 import { ModalperfilPage } from '../modalperfil/modalperfil.page';
 import { StorageService } from 'src/app/services/storageService';
@@ -22,11 +22,14 @@ desejos: any
     public modalCtrl: ModalController, 
     public navCtrl: NavController,
     public storage: StorageService,
-    public cadastro: CadastroService
+    public cadastro: CadastroService,
+    public alertCtrl: AlertController
     ) { }
 
   ngOnInit() {
     this.loadUser()
+    this.alertDesejo()
+
     
   }
 
@@ -93,6 +96,30 @@ desejos: any
     
   
   }
+
+
+
+  async alertDesejo(){ 
+    const alert = await this.alertCtrl.create({
+  
+      header: 'Informações',
+      subHeader: 'Pontos do desejo',
+      message: 'Todo desejo para ser conquistado é necessário ter pontos para obtê-los. '
+      +'A quatidade de pontos de todo desejo é igual a 3x o seu valor de custo.' + ' Em breve esse parametro poderá ser mudado pelo responsável da família!',
+  
+      buttons: [{
+        text: 'Fechar',
+        role: 'fechar',
+        handler: () => {
+          
+        }
+      },
+    ]
+  });
+  alert.present()
+  }
+
+
 
 
 }
