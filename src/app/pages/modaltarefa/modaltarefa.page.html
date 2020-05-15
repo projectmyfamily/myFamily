@@ -18,13 +18,13 @@
     <span>Finalizar Tarefa</span>
   </div>
   <div class="p1">
-    <p>Tarefa</p>
+    <p>{{tarefas.nome}}</p>
   </div>
   <div class="p2">
-    <p>Dono da Tarefa</p>
+    <p>Nível: {{tarefas.nivel}}</p>
   </div>
   <div class="p3">
-    <p>Pontuação</p>
+    <p>{{tarefas.pontuacao}}</p>
   </div>
   <div class="ion-text-center titulofoto">
     <span>Adicionar Foto</span>
@@ -34,7 +34,7 @@
     <img src="assets/addfoto.svg">
   </div>
 
-  <ion-button class="ion-text-center btnSeguir">Finalizar Tarefa</ion-button>
+  <ion-button (click)="concluir(tarefas.id)" class="ion-text-center btnSeguir">Finalizar Tarefa</ion-button>
   
 
 </ion-content>

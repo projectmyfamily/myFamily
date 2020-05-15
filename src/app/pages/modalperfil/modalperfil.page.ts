@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController, AlertController } from '@ionic/angular';
 import { StorageService } from 'src/app/services/storageService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modalperfil',
@@ -11,21 +12,22 @@ export class ModalperfilPage implements OnInit {
 
   membro = { 
     nome: "Nome",
-    parentesco: "Parentesco",
-    nascimento: "Nascimento"
+    nascimento: "Data de Nascimento",
+    pontuacao: "Pontuação"
   }
 
   constructor(
     public modalCtrl: ModalController,
     public navCtrl: NavController,
     public alertCtrl: AlertController,
-    public storage: StorageService
+    public storage: StorageService,
+    public router: Router
     ) { }
 
   ngOnInit() {
     this.membro.nome = this.storage.getLocalMember().nome
-    this.membro.parentesco = this.storage.getLocalMember().parentesco
     this.membro.nascimento = this.storage.getLocalMember().nascimento
+    this.membro.pontuacao = this.storage.getLocalMember().pontuacao
   }
 
   voltar() {
@@ -68,7 +70,7 @@ export class ModalperfilPage implements OnInit {
       {
         text: 'Ok',
         handler: () => {
-          this.navCtrl.navigateBack(['/perfil'])
+          this.router.navigate(['/perfil'])
           this.modalCtrl.dismiss();
         }
       }

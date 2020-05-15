@@ -13,11 +13,14 @@
   <span class="ion-text-center tarefas">Meus Desejos</span>
 
  <div *ngFor="let d of desejos">
-<ion-item>
-  <label>
-    <p>Fala ai</p>
-  </label>
-</ion-item>
+  <ion-item class="cor" (click)="modalDesejo()" >
+    <ion-label>
+      <img src="assets/coracaoyelow.svg">
+      <p class="p0">{{d.nome}}</p>
+      <p class="p2">{{d.valor}}</p>
+      <p class="p3">{{pontuacao}}/{{d.pontuacao}}pts</p>
+    </ion-label>
+  </ion-item>
  </div>
  
   

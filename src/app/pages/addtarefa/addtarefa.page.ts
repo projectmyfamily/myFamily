@@ -83,6 +83,7 @@ add(){
 let id = this.buscaMembros()
 this.crud.insert(this.cad, id).subscribe(response =>{ 
 console.log(response)
+this.navCtrl.back()
 }, error =>{ 
   console.log(error)
 }

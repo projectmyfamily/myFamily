@@ -1,5 +1,6 @@
 export const StorageKeys = { 
     localUser: "LocalUser",
-    LocalMember: "LocalMember"
+    LocalMember: "LocalMember",
+    Modal: "Modal"
     
 }

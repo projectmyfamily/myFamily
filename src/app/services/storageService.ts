@@ -42,6 +42,23 @@ export class StorageService{
 
     }
 
+    getModal(){ 
+        let usr = localStorage.getItem(StorageKeys.Modal)
+        if(usr == null){ 
+            return null
+        }else{
+            return JSON.parse(usr)
+        }
+    }
+    setModal(obj: LocalUser){ 
+        if(obj == null){
+            localStorage.removeItem(StorageKeys.Modal)
+        }else{
+            localStorage.setItem(StorageKeys.Modal, JSON.stringify(obj))
+        }
+
+    }
+
     
     
 }

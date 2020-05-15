@@ -17,6 +17,7 @@ export class DesejoPage implements OnInit {
 ac:any
 membros:any
 desejos: any
+pontuacao
 
   constructor(
     public modalCtrl: ModalController, 
@@ -66,12 +67,10 @@ desejos: any
         this.cadastro.findByEmail(localUser.email)
           .subscribe(response => {
           this.ac = response as AccountDTO;
-          console.log(this.ac)
           this.membros = this.ac.membros
         this.desejos = this.membros[this.buscaMembros()].desejos
-        console.log(this.desejos)
-    
-            
+            this.pontuacao = this.membros[this.buscaMembros()].pontuacao
+           
           },
           error => {
             if (error.status == 403) {

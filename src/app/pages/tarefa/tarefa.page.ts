@@ -48,7 +48,10 @@ export class TarefaPage implements OnInit {
     this.navCtrl.navigateForward('/addtarefa');
   }
 
-  async modalTarefa() {
+  async modalTarefa(m) {
+    console.log(m)
+    this.storage.setModal(m)
+    console.log(this.storage.getModal())
 
     const modaltarefa = await this.modalCtrl.create({
       component: ModaltarefaPage
