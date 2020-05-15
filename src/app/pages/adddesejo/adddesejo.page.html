@@ -16,12 +16,12 @@
     <span>Adicionar Desejo</span>
   </div>
   
-  <div class="forms">
+  <div class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
       <ion-item>
-        <ion-input type="text" name="desejo" placeholder="Desejo"></ion-input>
+        <ion-input type="text" name="desejo" minlength="4"  required placeholder="Desejo"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" name="pontacao" placeholder="Pontuação"></ion-input>
+        <ion-input type="number" pattern="[0-9]+$" name="pontacao" required placeholder="Pontuação"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Dono do Desejo</ion-label>
@@ -36,6 +36,6 @@
       </ion-item>
    </div>
 
-   <ion-button class="ion-text-center btnSeguir">Adicionar Desejo</ion-button>
+   <ion-button class="ion-text-center btnSeguir"  >Adicionar Desejo</ion-button>
 
 </ion-content>

@@ -1,3 +1,19 @@
+
+<script type="text/javascript">
+  function fcnConfirma() {
+      if (!document.getElementById('remover').checked) {
+          alert("Marque a opção:\nTenho certeza de que desejo remover o perfil.");
+          return;
+      }else{
+          window.open("perfildelete.html","_self")
+          // window.open("perfildelete.html","_blank")
+      }
+  }
+</script>
+
+
+
+
 <ion-header>
   <ion-toolbar>
     <img class="logo" src="assets/logo2.svg">
@@ -38,8 +54,11 @@
   </ion-item>
 </form>
 
+<ion-checkbox required onclick="fcnConfirma();"></ion-checkbox>
 <span (click)="modalTermos()" class="ion-text-center termos">Aceito os termos de privacidade</span>
 
 <ion-button (click)="seguir()" [disabled] = "fc.invalid" class="ion-text-center btnSeguir">Próximo</ion-button>
 
 </ion-content>
+
+

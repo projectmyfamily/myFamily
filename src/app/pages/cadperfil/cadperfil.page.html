@@ -31,14 +31,18 @@
   <ion-item>
     <ion-input name="membro.nascimento" [(ngModel)]="membro.nascimento" type="date" placeholder="Idade"></ion-input>
   </ion-item>
-  <ion-label>Parentesco</ion-label>
-  <ion-select>
+  
+  <ion-item>
+    <ion-select>
+    <ion-label>Parentesco</ion-label>
     <ion-input name="membro.parentesco" type="text" [(ngModel)]="membro.parentesco" placeholder="Parentesco"></ion-input>
-    <ion-select-option>Mãe</ion-select-option>
-  <ion-select-option>Pai</ion-select-option>
-  <ion-select-option>Irmão</ion-select-option>
-  <ion-select-option>Irmã</ion-select-option>
-  </ion-select>
+    <ion-select-option>Mãe/Pai</ion-select-option>
+  <ion-select-option>Irmão/Irmã</ion-select-option>
+  <ion-select-option>Tio/Tia</ion-select-option>
+  <ion-select-option>Avô/Avó</ion-select-option>
+  <ion-select-option>Outros</ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-item>
     <ion-input name="membro.pin" type="password" minlength="3" maxlength="6" [(ngModel)]="membro.pin" required placeholder="PIN"></ion-input>
   </ion-item>
