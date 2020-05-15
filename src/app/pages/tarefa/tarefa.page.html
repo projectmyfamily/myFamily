@@ -25,17 +25,17 @@
     </ion-card-header>
   </ion-card>
 -->
-  <ion-item class="cor">
+  <ion-item *ngFor="let t of listaTarefas" class="cor">
     <ion-avatar slot="start">
       <img src="./avatar-han.png">
     </ion-avatar>
     <ion-label>
-      <h2>Han</h2>
+      <h2>{{t.nome}}</h2>
       <h3>Look, kid...</h3>
       <p>I've got enough on my plate as it is, and I...</p>
     </ion-label>
   </ion-item>
-  
+
 
 
 </ion-content>
