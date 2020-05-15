@@ -3,7 +3,6 @@ import { NavController, LoadingController } from '@ionic/angular';
 import { CadastroService } from 'src/app/services/domain/cadastro-service';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountDTO } from 'src/model/accountDTO';
-import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-perfil',
@@ -49,6 +48,8 @@ export class PerfilPage implements OnInit {
           },
           error => {
             if (error.status == 403) {
+              this.sair()
+
             }
           });
       }
@@ -68,4 +69,12 @@ export class PerfilPage implements OnInit {
     this.storage.setLocalMember(m)
     this.navCtrl.navigateBack('/tabs/home');
   }
+
+
+  verification(){ 
+    return this.loadUser()
+  }
 }
+
+
+
