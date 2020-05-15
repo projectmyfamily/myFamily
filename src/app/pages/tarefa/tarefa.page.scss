@@ -1,66 +1,67 @@
-.logo{
+.logo {
 
     margin-left: 2%;
-    width: 100px;
-    margin-top: 2%;
-   
+    width      : 100px;
+    margin-top : 2%;
+
 }
-.perfil{
+
+.perfil {
 
 
-    width: 10%;
-    height: 10%;
+    width       : 10%;
+    height      : 10%;
     margin-right: 3%;
 }
 
-.add{
+.add {
 
     width: 70%;
+    position: static;
 }
 
-.tarefas{
+.tarefas {
 
-    font-size: 24px;
+    font-size  : 24px;
     font-family: lato;
-    color: #515151;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 90%;
+    color      : #515151;
+    position   : absolute;
+    left       : 0;
+    right      : 0;
+    bottom     : 90%;
 }
 
 
-.cor{
+
+.cor {
 
     --ion-background-color: #515151;
-    position: absolute;
-    bottom: 70%;
-    left: 5%;
-    right: 0;
-    width: 90%;
-    border-radius: 5px;
+    margin-top: 19%;
+    margin-bottom: -15%;
+    width: auto;
+
 }
 
-.p1{
+.p1 {
 
-    color: #FAFF03;
+    color      : #FAFF03;
     font-family: lato;
 }
 
-.p2{
+.p2 {
 
-    color: #FAFF03;
+    color      : #FAFF03;
     font-family: lato;
 
 }
 
-.p3{
+.p3 {
 
-    color: #FAFF03;
-    font-size: 29px;
-    position: absolute;
-    left: 80%;
-    right: 0;
-    bottom: 5%;
+    color      : #FAFF03;
+    font-size  : 29px;
+    position   : absolute;
+    left       : 80%;
+    right      : 0;
+    bottom     : 5%;
     font-family: lato;
 }
