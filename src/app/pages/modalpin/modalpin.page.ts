@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
+import { StorageService } from 'src/app/services/storageService';
 
 @Component({
   selector: 'app-modalpin',
@@ -8,10 +9,17 @@ import { ModalController, NavController } from '@ionic/angular';
 })
 export class ModalpinPage implements OnInit {
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController) { }
+
+pin: any
+msg: any
+
+
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public storage: StorageService) { }
 
   ngOnInit() {
+  
   }
+
 
   voltar() {
 
@@ -19,8 +27,14 @@ export class ModalpinPage implements OnInit {
   }
 
   entrar() {
-
-    this.navCtrl.navigateForward('/tabs/home');
+    if(this.pin == this.storage.getLocalMember().pin){ 
+      this.navCtrl.navigateForward('/tabs/home');
+      this.modalCtrl.dismiss()
+    }else{ 
+      this.msg = "Pin incorreto"
+    }
+    
+    
   }
 
   esqueceusenha() {

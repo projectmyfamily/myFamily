@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, LoadingController } from '@ionic/angular';
+import { NavController, LoadingController, ModalController } from '@ionic/angular';
 import { CadastroService } from 'src/app/services/domain/cadastro-service';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountDTO } from 'src/model/accountDTO';
+import { ModalpinPage } from '../modalpin/modalpin.page';
 
 @Component({
   selector: 'app-perfil',
@@ -18,6 +19,7 @@ export class PerfilPage implements OnInit {
     public navCtrl: NavController,
     public cadastro: CadastroService,
     public storage: StorageService,
+    public modalCtrl: ModalController
 
     ) { }
 
@@ -66,14 +68,26 @@ export class PerfilPage implements OnInit {
 
 
   home(m){ 
+    
+    console.log(m)
     this.storage.setLocalMember(m)
-    this.navCtrl.navigateBack('/tabs/home');
+    //this.storage.setMemberInfo()
+    this.abrirmodalperfil()
   }
 
 
-  verification(){ 
-    return this.loadUser()
+
+  async abrirmodalperfil() {
+
+    const modalperfil = await this.modalCtrl.create({
+      component: ModalpinPage
+    });
+
+    modalperfil.present();
+
+
   }
+
 }
 
 

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/LogoNome.png">
+    <ion-buttons (click)="voltar()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container ion-text-center titulo">
+    <span>
+        Editar Perfil
+    </span>
+  </div>
+
+
+  <form class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
+    <ion-item>
+      <ion-input name="cad.nome" type="text" [(ngModel)]="cad.nome" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" minlength="4" required placeholder="Nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input name="cad.nascimento"  type="date" [(ngModel)]="cad.nascimento" required placeholder="Idade"></ion-input>
+    </ion-item>
+    
+    <ion-select name="cad.parentesco" type="text" [(ngModel)]="cad.parentesco"  required placeholder="Parentesco">
+      <ion-select-option>Mãe</ion-select-option>
+      <ion-select-option>Pai</ion-select-option>
+      <ion-select-option>Irmão</ion-select-option>
+      <ion-select-option>Irmã</ion-select-option>
+    </ion-select>
+    <ion-item>
+      <ion-checkbox name="responsabilidade" [(ngModel)]="responsabilidade" required color="warning" slot="start"></ion-checkbox>
+      <ion-label>Responsável</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-input name="cad.pin" type="password"  [(ngModel)]="cad.pin"  minlength="3" maxlength="6" required pattern="[0-9]+$"  required placeholder="PIN"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input name="confirme" type="password" [(ngModel)]="confirme"  minlength="3" maxlength="6" pattern="[0-9]+$" required placeholder="Confirme o PIN"></ion-input>
+    </ion-item>
+   
+  </form>
+  
+  
+  <ion-button (click)="adicionar()"  class="ion-text-center btnSeguir">Concluir edição</ion-button>
+  <ion-button class="ion-text-center btnCancel" color="danger">Deletar perfil</ion-button>
+
+</ion-content>
+
