@@ -22,7 +22,9 @@ export class AddtarefaPage implements OnInit {
     pontuacao: null, 
     designar: null, 
     dataFinal: null, 
-    dataInicial: new Date().toLocaleString()
+    dataInicial: new Date().toLocaleString(),
+    observacoes: null, 
+    prazo: null
 
   }
 

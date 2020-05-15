@@ -5,6 +5,8 @@ export interface TarefaDTO{
     pontuacao: string, 
     designar: string,
     dataInicial: string,
-    dataFinal: string
+    dataFinal: string,
+    observacoes: string, 
+    prazo: string
 
 }

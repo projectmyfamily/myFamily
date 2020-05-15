@@ -27,7 +27,7 @@ export class CadperfilPage implements OnInit {
   }
 
   confirme = null
-  msg = null
+  msg = ""
   
 
   //informações da conta em stand by para envio
@@ -111,7 +111,10 @@ export class CadperfilPage implements OnInit {
          
 
         }, erro =>{ 
-          console.log("Erro ao cadastrar conta ")
+
+          if(erro.status == 500){ 
+            this.msg += "Email já existe";
+          }
         
 
         }
