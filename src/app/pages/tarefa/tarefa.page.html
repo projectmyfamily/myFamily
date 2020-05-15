@@ -2,9 +2,6 @@
   <ion-toolbar>
     <img class="logo" src="assets/LogoNome.png">
     
-    <ion-avatar (click)="abrirmodalperfil()" slot="end" class="perfil">
-      <img src="assets/add.svg">
-    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
@@ -15,16 +12,7 @@
   </ion-fab>
   
   <span class="ion-text-center tarefas">Suas Tarefas</span>
-<!--
- <div *ngFor="let t of listaTarefas" class="cor">
-  <ion-card  (click)="modalTarefa()">
-    <ion-card-header>
-      <ion-card-title class="p1">{{t.nome}}</ion-card-title>
-      <p class="p2">Nível de Dificuldade: {{t.nivel}}</p>
-      <p class="p3">{{t.pontuacao}}</p>
-    </ion-card-header>
-  </ion-card>
--->
+
   <ion-item class="cor">
     <ion-avatar slot="start">
       <img src="./avatar-han.png">
