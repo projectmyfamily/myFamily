@@ -21,10 +21,10 @@
         <ion-input type="text" name="cad.nome" [(ngModel)]="cad.nome" name="tarefa" required placeholder="Tarefa" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" name="pontuacao" required placeholder="Pontuação"></ion-input>
+        <ion-input type="text" name="pontuacao" pattern="[0-9]+$" required placeholder="Pontuação"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-select [(ngModel)]="cad.nivel" name="cad.nivel" placeholder="Nível"  ok-text="Ok" cancel-text="Cancelar">
+          <ion-select [(ngModel)]="cad.nivel" name="cad.nivel" required placeholder="Nível"  ok-text="Ok" cancel-text="Cancelar">
               <ion-select-option value="1">Nível 1</ion-select-option>
               <ion-select-option value="2">Nível 2</ion-select-option>
               <ion-select-option value="3">Nível 3</ion-select-option>
@@ -32,7 +32,7 @@
         </ion-item>
       <ion-item>
         <ion-label>Dono da Tarefa</ion-label>
-        <ion-select [(ngModel)]="recebedor" name="recebedor" *ngFor="let m of membros" ok-text="Ok" cancel-text="Cancelar">
+        <ion-select [(ngModel)]="recebedor" required name="recebedor" *ngFor="let m of membros" ok-text="Ok" cancel-text="Cancelar">
         <ion-select-option value="{{m.nome}}">{{m.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
@@ -40,7 +40,7 @@
         <ion-input type="text" name="observacoes" required placeholder="Observações"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="date" name="prazo" required placeholder="Prazo"></ion-input>
+        <ion-input type="date" name="prazo" displayFormat="DD/MM/YYYY" required placeholder="Prazo"></ion-input>
       </ion-item>
     </form>
 
