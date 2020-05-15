@@ -66,6 +66,7 @@ desejos: any
           console.log(this.ac)
           this.membros = this.ac.membros
         this.desejos = this.membros[this.buscaMembros()].desejos
+        console.log(this.desejos)
     
             
           },

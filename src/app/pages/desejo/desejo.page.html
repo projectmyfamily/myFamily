@@ -12,8 +12,8 @@
   
   <span class="ion-text-center tarefas">Meus Desejos</span>
 
- 
-  <ion-item class="cor" (click)="modalDesejo()">
+ <div *ngFor="let d of desejos">
+  <ion-item class="cor" (click)="modalDesejo()" >
     <ion-label>
       <img src="assets/coracaoyelow.svg">
       <p class="p0">Desejo</p>
@@ -21,6 +21,8 @@
       <p class="p3">30/1000pts</p>
     </ion-label>
   </ion-item>
+ </div>
+ 
   
 
 </ion-content>
