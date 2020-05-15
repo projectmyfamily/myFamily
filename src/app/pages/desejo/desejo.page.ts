@@ -5,6 +5,9 @@ import { ModalperfilPage } from '../modalperfil/modalperfil.page';
 import { StorageService } from 'src/app/services/storageService';
 import { CadastroService } from 'src/app/services/domain/cadastro-service';
 import { AccountDTO } from 'src/model/accountDTO';
+import { DesejosService } from 'src/app/services/domain/desejos-service';
+import { TarefaService } from 'src/app/services/domain/tarefa-service';
+import { Points } from 'src/model/points';
 
 @Component({
   selector: 'app-desejo',
@@ -16,7 +19,7 @@ export class DesejoPage implements OnInit {
 
 ac:any
 membros:any
-desejos: any
+desejos: any = []
 pontuacao
 
   constructor(
@@ -24,7 +27,9 @@ pontuacao
     public navCtrl: NavController,
     public storage: StorageService,
     public cadastro: CadastroService,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController, 
+    public desejosService: DesejosService, 
+    public tarefas: TarefaService
     ) { }
 
   ngOnInit() {
@@ -116,6 +121,62 @@ pontuacao
     ]
   });
   alert.present()
+  }
+
+
+  async alertCompra(id, pts){ 
+   
+    
+    const alert = await this.alertCtrl.create({
+  
+      header: 'Compra de Desejo',
+      subHeader: 'Deseja comprar?',
+      message: 'Se você escolher comprar o desejo gastará os seus pontos',  
+      buttons: [{
+        text: 'Fechar',
+        role: 'fechar',
+        handler: () => {
+          
+        }
+      },{
+        text: 'Ok',
+        handler: () => {
+          this.compra(id, pts)
+          this.modalCtrl.dismiss();
+        }
+      }
+    ]
+  });
+  alert.present()
+  }
+
+
+  compra(ids, pts){ 
+    if(this.storage.getLocalMember().pontuacao >= pts){ 
+
+    
+    let points = pts
+    let pointsUser = this.storage.getLocalMember().pontuacao
+    let final: Points = { 
+      pontuacao: pointsUser - pts
+    }
+    this.tarefas.updatePoints(final, this.storage.getLocalMember().id).subscribe(resp =>{ 
+      console.log(this.storage.getLocalMember().id)
+      console.log(final)
+    })
+   
+    this.desejosService.delete(ids).subscribe(response=>{ 
+      
+
+
+    }, error => { 
+
+    }
+    )
+  }else{ 
+
+  }
+    
   }
 
 

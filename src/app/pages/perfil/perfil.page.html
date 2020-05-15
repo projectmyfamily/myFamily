@@ -17,10 +17,10 @@
 </ion-fab>
  
  <div *ngFor="let membro of membro">
-      <ion-button class="ion-button ion-text-center btnadd" >
-        <p (click)="home(membro)">{{membro.nome}}</p>
-      </ion-button>
- </div>
+      <ion-button (click)="home(membro)" class="ion-button ion-text-center btnadd" >
+        <p>{{membro.nome}}</p>
+      </ion-button >
+ </div>"
  
 
 </ion-content>

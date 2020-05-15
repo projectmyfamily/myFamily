@@ -13,7 +13,7 @@
 
   <div class="container ion-text-center titulo">
     <span>
-        Adicionar Novo Perfil
+        Editar Perfil
     </span>
   </div>
 
@@ -27,11 +27,10 @@
     </ion-item>
     
     <ion-select name="cad.parentesco" type="text" [(ngModel)]="cad.parentesco"  required placeholder="Parentesco">
-        <ion-select-option>Pai/Mãe</ion-select-option>
-        <ion-select-option>Filho/Filha</ion-select-option>
-        <ion-select-option>Tio/Tia</ion-select-option>
-        <ion-select-option>Avô/Avó</ion-select-option>
-        <ion-select-option>outros</ion-select-option>
+      <ion-select-option>Mãe</ion-select-option>
+      <ion-select-option>Pai</ion-select-option>
+      <ion-select-option>Irmão</ion-select-option>
+      <ion-select-option>Irmã</ion-select-option>
     </ion-select>
     <ion-item>
       <ion-checkbox name="responsabilidade" [(ngModel)]="responsabilidade" required color="warning" slot="start"></ion-checkbox>
@@ -47,6 +46,8 @@
   </form>
   
   
-  <ion-button (click)="adicionar()"  class="ion-text-center btnSeguir">Adicionar</ion-button>
+  <ion-button (click)="adicionar()"  class="ion-text-center btnSeguir">Concluir edição</ion-button>
+  <ion-button class="ion-text-center btnCancel" color="danger">Deletar perfil</ion-button>
 
 </ion-content>
+

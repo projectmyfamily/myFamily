@@ -49,7 +49,7 @@ export class ModalperfilPage implements OnInit {
 
   edit() {
 
-    this.navCtrl.navigateForward('/cadperfil');
+    this.navCtrl.navigateForward('/editarperfil');
     this.modalCtrl.dismiss();
   }
 

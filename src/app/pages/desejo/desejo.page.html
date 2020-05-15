@@ -6,14 +6,14 @@
 
 <ion-content>
 
-  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab *ngIf="desejos.length <= 4" horizontal="end" vertical="bottom" slot="fixed">
       <img (click)="add()" class="add" src="assets/addtarefa.svg"> 
   </ion-fab>
   
   <span class="ion-text-center tarefas">Meus Desejos</span>
 
  <div *ngFor="let d of desejos">
-  <ion-item class="cor" (click)="modalDesejo()" >
+  <ion-item class="cor" (click)="alertCompra(d.id, d.pontuacao)" >
     <ion-label>
       <img src="assets/coracaoyelow.svg">
       <p class="p0">{{d.nome}}</p>

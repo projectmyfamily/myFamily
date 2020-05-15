@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { DesejosDTO } from 'src/model/desejosDTO';
 import { DesejosService } from 'src/app/services/domain/desejos-service';
 import { AccountDTO } from 'src/model/accountDTO';
@@ -12,6 +12,8 @@ import { StorageService } from 'src/app/services/storageService';
   styleUrls: ['./adddesejo.page.scss'],
 })
 export class AdddesejoPage implements OnInit {
+
+  msg: any 
 
 cad: DesejosDTO = { 
   nome: null, 
@@ -30,7 +32,8 @@ cad: DesejosDTO = {
     public navCtrl: NavController,
     public add: DesejosService,
     public cadastro: CadastroService,
-    public storage: StorageService
+    public storage: StorageService, 
+    public modalCtrl: ModalController
     ) { }
 
   ngOnInit() {
@@ -49,6 +52,9 @@ cad: DesejosDTO = {
       this.add.insert(this.cad, this.storage.getLocalMember().id).subscribe(response=>{ 
         console.log("cadastrado com sucesso")
         console.log(response)
+        location.reload()
+        this.modalCtrl.dismiss() 
+        this.msg = "Desejo cadastrado com sucesso"
 
       }, error => { 
         console.log(error)

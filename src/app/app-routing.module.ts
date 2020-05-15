@@ -96,6 +96,10 @@ const routes: Routes = [
   },  {
     path: 'esquecisenha',
     loadChildren: () => import('./pages/esquecisenha/esquecisenha.module').then( m => m.EsquecisenhaPageModule)
+  },
+  {
+    path: 'editarperfil',
+    loadChildren: () => import('./pages/editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
   }
 
 ];

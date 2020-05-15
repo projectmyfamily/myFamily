@@ -25,6 +25,13 @@ export class DesejosService{
         )
     }
 
+    delete(id){ 
+        return this.http.delete(
+            `${API_CONFIG.baseUrl}/desejos/${id}`
+        )
+
+    }
+
 
   
 
