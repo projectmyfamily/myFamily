@@ -19,6 +19,7 @@
   <form class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
       <ion-item>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <ion-input type="text" name="cad.nome" [(ngModel)]="cad.nome" placeholder="Tarefa"></ion-input>
       </ion-item>
       <ion-item>
@@ -29,6 +30,12 @@
       <ion-item>
         <ion-input type="text" name="pontacao" required placeholder="Pontuação"></ion-input>
 >>>>>>> nicole
+=======
+        <ion-input type="text" name="cad.nome" [(ngModel)]="cad.nome" name="tarefa" required placeholder="Tarefa" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" name="ca.pontacao" [(ngModel)]="cad.pontuacao" required placeholder="Pontuação"></ion-input>
+>>>>>>> victor
       </ion-item>
       <ion-item>
           <ion-select [(ngModel)]="cad.nivel" name="cad.nivel" placeholder="Nível"  ok-text="Ok" cancel-text="Cancelar">
@@ -44,17 +51,21 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-input type="text" name="observacoes" required placeholder="Observações"></ion-input>
+        <ion-input type="text" name="cad.observacoes" [(ngModel)]="cad.observacoes" required placeholder="Observações"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="date" name="prazo" required placeholder="Prazo"></ion-input>
+        <ion-input type="date" name="cad.prazo" [(ngModel)]="cad.prazo"  required placeholder="Prazo"></ion-input>
       </ion-item>
     </form>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    <ion-button (click)="add()" class="ion-text-center btnSeguir">Adicionar</ion-button>
 =======
    <ion-button class="ion-text-center btnSeguir" [disabled] = "fc.invalid">Adicionar</ion-button>
 >>>>>>> nicole
+=======
+   <ion-button (click)="add()"  class="ion-text-center btnSeguir" [disabled] = "fc.invalid">Adicionar</ion-button>
+>>>>>>> victor
 
 </ion-content>

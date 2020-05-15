@@ -93,7 +93,11 @@ const routes: Routes = [
   {
     path: 'modaltarefa',
     loadChildren: () => import('./pages/modaltarefa/modaltarefa.module').then( m => m.ModaltarefaPageModule)
+  },  {
+    path: 'esquecisenha',
+    loadChildren: () => import('./pages/esquecisenha/esquecisenha.module').then( m => m.EsquecisenhaPageModule)
   }
+
 ];
 @NgModule({
   imports: [

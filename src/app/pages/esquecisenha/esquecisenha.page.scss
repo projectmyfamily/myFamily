@@ -1,0 +1,85 @@
+.logo{
+
+    margin-left: 2%;
+    width: 30%;
+    margin-top: 2%;
+   
+}
+
+.voltar{
+
+font-family: lato;
+color: #FAFF03;
+}
+
+ion-content{
+
+
+    --ion-background-color: #515151
+}
+
+.btnsenha{
+
+    position: absolute;
+    left: 5%;
+    right: 0;
+    width: 90%;
+    bottom: 40%;
+}
+
+.btncancel{
+
+    position: absolute;
+    left: 5%;
+    right: 0;
+    width: 90%;
+    bottom: 30%;
+}
+
+ion-item{
+    
+    --backgrond:rgba(255,255,255);
+    --border-radius: 5px;
+    width: 90%;
+    position: absolute;
+    left: 6%;
+    right: 0;
+    bottom: 55%;
+    
+}
+
+ion-input{
+
+    --background: rgb(255, 255, 255);
+
+}
+
+.p1{
+
+    font-size: 19px;
+    color: #FAFF03;
+    position: absolute;
+    bottom: 5%;
+
+}
+
+.p2{
+
+    color: #FAFF03;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5%;
+    
+    
+
+}
+
+.p3{
+
+    color: #FAFF03;
+    position: absolute;
+    bottom: 69%;
+}
+
+

@@ -12,18 +12,27 @@
   </ion-fab>
   
   <span class="ion-text-center tarefas">Suas Tarefas</span>
-
-  <ion-item class="cor">
+<!--
+ <div *ngFor="let t of listaTarefas" class="cor">
+  <ion-card  (click)="modalTarefa()">
+    <ion-card-header>
+      <ion-card-title class="p1">{{t.nome}}</ion-card-title>
+      <p class="p2">Nível de Dificuldade: {{t.nivel}}</p>
+      <p class="p3">{{t.pontuacao}}</p>
+    </ion-card-header>
+  </ion-card>
+-->
+  <ion-item *ngFor="let t of listaTarefas" class="cor">
     <ion-avatar slot="start">
       <img src="./avatar-han.png">
     </ion-avatar>
     <ion-label>
-      <h2>Han</h2>
+      <h2>{{t.nome}}</h2>
       <h3>Look, kid...</h3>
       <p>I've got enough on my plate as it is, and I...</p>
     </ion-label>
   </ion-item>
-  
+
 
 
 </ion-content>

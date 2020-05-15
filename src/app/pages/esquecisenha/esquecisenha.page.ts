@@ -2,11 +2,11 @@ import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-historico',
-  templateUrl: './historico.page.html',
-  styleUrls: ['./historico.page.scss'],
+  selector: 'app-esquecisenha',
+  templateUrl: './esquecisenha.page.html',
+  styleUrls: ['./esquecisenha.page.scss'],
 })
-export class HistoricoPage implements OnInit {
+export class EsquecisenhaPage implements OnInit {
 
   constructor(public navCtrl: NavController) { }
 
@@ -14,7 +14,6 @@ export class HistoricoPage implements OnInit {
   }
 
   voltar(){
-
 
     this.navCtrl.back();
   }

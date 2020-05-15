@@ -43,7 +43,7 @@ responsabilidade: boolean = false
   }
 
   adicionar(){
-    let localUser = this.storage.getLocalUser()
+   let localUser = this.storage.getLocalUser()
     this.cadastrar.findByEmail(localUser.email)
     .subscribe(response => { 
       this.ac = response as AccountDTO
@@ -61,6 +61,7 @@ responsabilidade: boolean = false
       }
       );
     }
+   
     
   }
 
