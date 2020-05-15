@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from './services/storageService';
 import { CadastroService } from './services/domain/cadastro-service';
 import { TarefaService } from './services/domain/tarefa-service';
+import { DesejosService } from './services/domain/desejos-service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +32,8 @@ import { TarefaService } from './services/domain/tarefa-service';
     Auth,
     StorageService,
     CadastroService,
-    TarefaService
+    TarefaService,
+    DesejosService
   ],
   bootstrap: [AppComponent]
 })
