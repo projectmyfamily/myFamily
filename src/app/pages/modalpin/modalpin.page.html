@@ -10,20 +10,22 @@
 </ion-header>
 
 <ion-content>
-
+ 
   <div class="container ion-text-center titulo">
+      
     <span>
         Digite o seu PIN:
     </span>
   </div>
-
+  
   <p class="ion-text-center p1">É necessário seu PIN para acessar o perfil.</p>
 
   <p class="ion-text-center p2" (click)="esqueceusenha()">Esqueci meu PIN!</p>
 
   <div class="forms">
+      <p style="text-align: center; color:red">{{msg}}</p>
     <ion-item>
-      <ion-input type="text" placeholder="PIN"></ion-input>
+      <ion-input name="pin" [(ngModel)]="pin" type="password" placeholder="PIN"></ion-input>
     </ion-item>
   </div>
 
