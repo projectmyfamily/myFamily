@@ -33,7 +33,7 @@ loading: any;
     ) {
 
       if (this.storage.getLocalUser() != null) {
-        this.navCtrl.navigateForward(['/perfil'])
+        this.navCtrl.navigateRoot(['/perfil'])
       }
     }
 
@@ -52,10 +52,9 @@ loading: any;
     this.auth.login(this.creds).subscribe(response =>{ 
       console.log(response)
       this.auth.successLogin(response.headers.get('Authorization'))
-      //this.navCtrl.navigateForward('/perfil');
-     this.router.navigate(['/perfil'])
+      this.navCtrl.navigateRoot('/perfil');
+     //this.router.navigate(['/perfil'])
     }, error => { 
-
       this.alertLoginerrado();
 
     })

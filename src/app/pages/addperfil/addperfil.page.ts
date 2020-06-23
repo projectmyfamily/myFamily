@@ -38,8 +38,9 @@ responsabilidade: boolean = false
   }
 
   voltar() {
-  this.navCtrl.back();
-
+  //this.navCtrl.back();
+  this.navCtrl.pop()
+  
   }
 
   adicionar(){

@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <img class="logo" src="assets/LogoNome.png">
+    <img (click)="refresh()" class="reload" src="assets/recarregar.svg">
     <ion-buttons (click)="sair()" class="voltar" slot="end">
       <ion-button>
         Sair
@@ -24,3 +25,12 @@
  
 
 </ion-content>
+
+<style>
+  .reload{ 
+    width: 10%;
+    margin-left: 25%;
+    
+  }
+
+</style>

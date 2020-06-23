@@ -5,6 +5,7 @@ import { StorageService } from 'src/app/services/storageService';
 import { AccountDTO } from 'src/model/accountDTO';
 import { TarefaDTO } from 'src/model/tarefaDTO';
 import { TarefaService } from 'src/app/services/domain/tarefa-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addtarefa',
@@ -37,7 +38,8 @@ export class AddtarefaPage implements OnInit {
     public storage: StorageService,
     public alertCtrl: AlertController,
     public modalCtrl: ModalController,
-    private crud: TarefaService
+    private crud: TarefaService, 
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -83,7 +85,11 @@ add(){
 let id = this.buscaMembros()
 this.crud.insert(this.cad, id).subscribe(response =>{ 
 console.log(response)
-this.navCtrl.back()
+if(this.navCtrl.navigateBack('/tabs/tarefa')){ 
+  location.reload()
+}
+//this.router.navigate(['/tabs/tarefa'])
+
 }, error =>{ 
   console.log(error)
 }

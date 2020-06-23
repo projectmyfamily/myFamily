@@ -29,6 +29,7 @@ export class PerfilPage implements OnInit {
 
     this.loadUser()
     
+   
   }
 
 
@@ -66,8 +67,8 @@ export class PerfilPage implements OnInit {
   }
 
   addperfil() {
-
-    this.navCtrl.navigateBack('/addperfil');
+  
+   this.navCtrl.navigateForward('/addperfil');
   }
 
 
@@ -90,6 +91,11 @@ export class PerfilPage implements OnInit {
     modalperfil.present();
 
 
+  }
+
+
+  refresh(){ 
+    location.reload()
   }
 
 }
