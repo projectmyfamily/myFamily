@@ -4,6 +4,7 @@ import { CadastroService } from 'src/app/services/domain/cadastro-service';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountDTO } from 'src/model/accountDTO';
 import { ModalpinPage } from '../modalpin/modalpin.page';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -19,7 +20,8 @@ export class PerfilPage implements OnInit {
     public navCtrl: NavController,
     public cadastro: CadastroService,
     public storage: StorageService,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public router: Router
 
     ) { }
 
@@ -32,7 +34,9 @@ export class PerfilPage implements OnInit {
 
   sair(){
     this.storage.setLocalUser(null)
-    this.navCtrl.navigateForward('/login')
+    this.navCtrl.navigateBack('/login')
+    
+    
   }
 
 

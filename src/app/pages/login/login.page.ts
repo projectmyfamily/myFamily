@@ -3,6 +3,7 @@ import { NavController, LoadingController, AlertController } from '@ionic/angula
 import { Auth } from 'src/app/services/auth';
 import { CredenciaisDTO } from 'src/model/credenciaisDTO';
 import { StorageService } from 'src/app/services/storageService';
+import { Router } from '@angular/router';
 
 
 
@@ -27,7 +28,8 @@ loading: any;
     public auth: Auth,
     public storage: StorageService,
     public loadingController:LoadingController,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController, 
+    public router: Router
     ) {
 
       if (this.storage.getLocalUser() != null) {
@@ -50,8 +52,8 @@ loading: any;
     this.auth.login(this.creds).subscribe(response =>{ 
       console.log(response)
       this.auth.successLogin(response.headers.get('Authorization'))
-      this.navCtrl.navigateForward('/perfil');
-
+      //this.navCtrl.navigateForward('/perfil');
+     this.router.navigate(['/perfil'])
     }, error => { 
 
       this.alertLoginerrado();
